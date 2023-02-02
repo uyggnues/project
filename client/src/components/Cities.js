@@ -15,20 +15,22 @@ const Cities = ({cities, width}) => {
                 {welcome ?
                     <Welcome setWelcome={setWelcome} width={width}/>
                     :
-                    <div className='button'>
+                    <>
+                        <div className='button'>
+                            {width < 800 ?
+                                <button className='instruction3' onClick={() => setWelcome(current => !current)}>How to Play</button>
+                                :
+                                <button className='instruction' onClick={() => setWelcome(current => !current)}>How to Play</button>
+                            }
+                        </div>
                         {width < 800 ?
-                            <button className='instruction3' onClick={() => setWelcome(current => !current)}>How to Play</button>
+                            <div className='title3'>Choose a City</div>
                             :
-                            <button className='instruction' onClick={() => setWelcome(current => !current)}>How to Play</button>
+                            <div className='title'>Choose a City</div>
                         }
-                    </div>
+                        <div className='city'>{mappedCities}</div>
+                    </>
                 }
-                {width < 800 ?
-                    <div className='title3'>Choose a City</div>
-                    :
-                    <div className='title'>Choose a City</div>
-                }
-                <div className='city'>{mappedCities}</div>
             </>
         </div>
     );
