@@ -88,7 +88,11 @@ html{
   width: 50rem;
   height: 25rem;
   border: 2px solid;
-
+  background-image: url('https://i.pinimg.com/736x/c4/df/2c/c4df2c1d264d48fa376d19b3a0732d21.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }
 .padding{
   padding: 4rem
@@ -99,11 +103,6 @@ html{
   margin-left: 50%;
   left: -15rem;
   top: -6rem;
-}
-
-.image{
-  height: 100%;
-  width: 100%;
 }
 
 

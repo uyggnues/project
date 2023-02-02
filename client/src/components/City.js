@@ -6,7 +6,6 @@ const City = ({city, width}) => {
             {width > 1500 ?
                 <div className='padding'>
                     <div className='cityCard'>
-                        <img className="image" src={city.image} alt="post"/>
                         <span className='cityName'>{city.name}</span>
                         <span className='cityPopulation'>{city.population}</span>
                     </div>

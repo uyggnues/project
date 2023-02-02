@@ -9,7 +9,7 @@ Player.create(first_name: 'seunggyu', last_name: 'lee', username: 'uyggnues', em
 
 puts 'seeding cities'
 6.times do
-    City.create(name: Faker::Name.name, population: Faker::Number.between(from:200000, to:3000000), image: Faker::LoremFlickr.image)
+    City.create(name: Faker::Name.name, population: Faker::Number.between(from:200000, to:3000000))
 end
 
 puts 'seeding civilians'
