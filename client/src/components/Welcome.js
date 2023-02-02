@@ -44,7 +44,7 @@ const Welcome = ({setWelcome, width}) => {
                     </div>
                     :
                     <>
-                    {width <= 400 || width < 800 ?
+                    {width < 800 ?
                     <div className='welcomePageBackground3'>
                         <div className='welcomePage3'>
                             <h1 className='header3'>

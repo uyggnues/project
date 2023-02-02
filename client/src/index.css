@@ -1,5 +1,5 @@
 html{
-  background-image: url('https://png.pngtree.com/back_origin_pic/04/42/55/de63aa02b1eb1949f291d5643e6d4d49.jpg');
+  background-image: url('https://ae01.alicdn.com/kf/HTB1dMMhSXXXXXXkXFXXq6xXFXXXu/10x10FT-Cityscape-Skyscraper-Cartoon-Downtown-City-Buildings-Clouds-Blue-Sky-Photography-Studio-Backdrops-Backgrounds-Vinyl-3x3m.jpg');
   background-position: center top;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -70,10 +70,20 @@ html{
   background-size: contain;
   background-color: transparent;
   border: 0;
-  height: 20rem;
-  width: 30rem;
+  height: 10rem;
+  width: 20rem;
   font-family: 'Unbounded', cursive;
-  font-size: 4rem;
+  font-size: 2.5rem;
+  margin-top: 60%;
+  margin-left: 25%;
+}
+
+.title{
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 5rem;
+  font-weight: bold;
 }
 
 .city{
@@ -85,15 +95,50 @@ html{
 }
 
 .cityCard{
-  width: 50rem;
+  width: 49rem;
   height: 25rem;
-  border: 2px solid;
-  background-image: url('https://i.pinimg.com/736x/c4/df/2c/c4df2c1d264d48fa376d19b3a0732d21.jpg');
+  border: 10px dashed black;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/002/285/092/large_2x/cartoon-city-background-vector.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  text-align: center;
+  /* display: flex;
+  flex-wrap: wrap; */
 }
+
+.cityName{
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 4rem;
+  /* border: 2px solid white; */
+  width: 100%;
+}
+
+.goButton{
+  background-image: url('https://pluspng.com/img-png/arrow-png-no-background-green-arrow-transparent-background-4050.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: yellow;
+  font-size: 4rem;
+  height: 14rem;
+  width: 23rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.cityPopulation{
+  margin-top: 0%;
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 4rem;
+}
+
 .padding{
   padding: 4rem
 }
@@ -171,10 +216,84 @@ html{
   background-size: contain;
   background-color: transparent;
   border: 0;
-  height: 5rem;
-  width: 12rem;
+  height: 10rem;
+  width: 20rem;
   font-family: 'Unbounded', cursive;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  margin-top: 60%;
+  margin-left: 25%;
+}
+
+.title2{
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 5rem;
+  font-weight: bold;
+}
+
+.city2{
+  /* border: 2px solid; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.cityCard2{
+  width: 45rem;
+  height: 25rem;
+  border: 10px dashed black;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/002/285/092/large_2x/cartoon-city-background-vector.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  text-align: center;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+.cityName2{
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 3.5rem;
+  /* border: 2px solid white; */
+  width: 100%;
+}
+
+.goButton2{
+  background-image: url('https://pluspng.com/img-png/arrow-png-no-background-green-arrow-transparent-background-4050.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: yellow;
+  font-size: 4rem;
+  height: 14rem;
+  width: 23rem;
+  background-color: transparent;
+  border: 0;
+}
+
+.cityPopulation2{
+  margin-top: 0%;
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 4rem;
+}
+
+.padding2{
+  padding: 4rem
+}
+
+.button2{
+  position: absolute;
+  margin-left: 50%;
+  left: -15rem;
+  top: -6rem;
 }
 /* ================================================================================================================================ */
 .welcomePageBackground3{
@@ -226,7 +345,7 @@ html{
 
 .rules3{
   font-family: 'Unbounded', cursive;
-  width: 24 rem;
+  width: 24rem;
   margin-left: 11%;
   font-size: .9rem;
   color: white;
@@ -241,8 +360,84 @@ html{
   background-size: contain;
   background-color: transparent;
   border: 0;
-  height: 5rem;
-  width: 12rem;
+  height: 10rem;
+  width: 20rem;
   font-family: 'Unbounded', cursive;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
+  margin-top: 50%;
+  margin-left: 25%;
+}
+
+.title3{
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.city3{
+  /* border: 2px solid; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.cityCard3{
+  width: 25rem;
+  height: 20rem;
+  border: 10px dashed black;
+  background-image: url('https://static.vecteezy.com/system/resources/previews/002/285/092/large_2x/cartoon-city-background-vector.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  text-align: center;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+.cityName3{
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 2rem;
+  /* border: 2px solid white; */
+  width: 100%;
+}
+
+.goButton3{
+  background-image: url('https://pluspng.com/img-png/arrow-png-no-background-green-arrow-transparent-background-4050.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: yellow;
+  font-size: 3rem;
+  height: 10rem;
+  width: 20rem;
+  background-color: transparent;
+  border: 0;
+  margin-top: 10%;
+}
+
+.cityPopulation3{
+  margin-top: 0%;
+  font-family: 'Unbounded', cursive;
+  color: orange;
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.486);
+}
+
+.padding3{
+  padding: 4rem
+}
+
+.button3{
+  position: absolute;
+  margin-left: 50%;
+  left: -15rem;
+  top: -6rem;
 }
