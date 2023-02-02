@@ -1,0 +1,249 @@
+html{
+  background-image: url('https://png.pngtree.com/back_origin_pic/04/42/55/de63aa02b1eb1949f291d5643e6d4d49.jpg');
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.welcomePageBackground{
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.welcomePage{
+  width: 100rem;
+  height: 80rem;
+  margin: auto;
+  background-image: url('https://clipground.com/images/chalk-board-clipart-14.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  text-align: cover;
+}
+
+.header{
+  font-size: 4rem;
+  margin-top: 12rem;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: white;
+  /* border: 2px solid; */
+  width: 80rem;
+  margin-left: 10%;
+}
+.X{
+  font-size: 4rem;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  float: right; 
+}
+
+.rulesHeader{
+  font-family: 'Unbounded', cursive;
+  width: 80rem;
+  margin-left: 10%;
+  font-size: 3rem;
+  color: white;
+}
+
+.rules{
+  font-family: 'Unbounded', cursive;
+  width: 80rem;
+  margin-left: 10%;
+  font-size: 3rem;
+  color: white;
+  padding-top: 1rem;
+}
+
+.instruction{
+  background-image: url('https://vectorified.com/images/rectangle-button-icon-4.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  background-color: transparent;
+  border: 0;
+  height: 20rem;
+  width: 30rem;
+  font-family: 'Unbounded', cursive;
+  font-size: 4rem;
+}
+
+.city{
+  /* border: 2px solid; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 4rem;
+}
+
+.cityCard{
+  width: 50rem;
+  height: 25rem;
+  border: 2px solid;
+
+}
+.padding{
+  padding: 4rem
+}
+
+.button{
+  position: absolute;
+  margin-left: 50%;
+  left: -15rem;
+  top: -6rem;
+}
+
+.image{
+  height: 100%;
+  width: 100%;
+}
+
+
+/* ================================================================================================================================ */
+.welcomePageBackground2{
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.welcomePage2{
+  width: 55rem;
+  height: 35rem;
+  margin: auto;
+  background-image: url('https://clipground.com/images/chalk-board-clipart-14.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  text-align: cover;
+}
+
+.header2{
+  font-size: 2.5rem;
+  margin-top: 3rem;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: white;
+  /* border: 2px solid; */
+  width: 45rem;
+  margin-left: 8%;
+}
+.X2{
+  font-size: 2.5rem;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  float: right; 
+}
+
+.rulesHeader2{
+  font-family: 'Unbounded', cursive;
+  width: 45rem;
+  margin-left: 11%;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.rules2{
+  font-family: 'Unbounded', cursive;
+  width: 45rem;
+  margin-left: 11%;
+  font-size: 1.5rem;
+  color: white;
+  padding-top: .5rem;
+}
+
+.instruction2{
+  background-image: url('https://vectorified.com/images/rectangle-button-icon-4.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  background-color: transparent;
+  border: 0;
+  height: 5rem;
+  width: 12rem;
+  font-family: 'Unbounded', cursive;
+  font-size: 1.5rem;
+}
+/* ================================================================================================================================ */
+.welcomePageBackground3{
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.welcomePage3{
+  width: 35rem;
+  height: 20rem;
+  margin: auto;
+  background-image: url('https://clipground.com/images/chalk-board-clipart-14.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  text-align: cover;
+}
+
+.header3{
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: white;
+  /* border: 2px solid; */
+  width: 25rem;
+  margin-left: 9%;
+}
+.X3{
+  font-size: 1.5rem;
+  text-align: center;
+  font-family: 'Unbounded', cursive;
+  color: white;
+  background-color: transparent;
+  border: 0;
+  float: right; 
+}
+
+.rulesHeader3{
+  font-family: 'Unbounded', cursive;
+  width: 25rem;
+  margin-left: 11%;
+  font-size: 1rem;
+  color: white;
+}
+
+.rules3{
+  font-family: 'Unbounded', cursive;
+  width: 24 rem;
+  margin-left: 11%;
+  font-size: .9rem;
+  color: white;
+  padding-top: .3rem;
+}
+
+.instruction3{
+  background-image: url('https://vectorified.com/images/rectangle-button-icon-4.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  background-color: transparent;
+  border: 0;
+  height: 5rem;
+  width: 12rem;
+  font-family: 'Unbounded', cursive;
+  font-size: 1.5rem;
+}
