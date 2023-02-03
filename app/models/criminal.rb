@@ -1,5 +1,6 @@
 class Criminal < ApplicationRecord
   belongs_to :city
+  has_many :favorites
 
   validates :name, presence: true
   validates :age, presence: true

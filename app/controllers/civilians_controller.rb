@@ -3,45 +3,39 @@ class CiviliansController < ApplicationController
 
   # GET /civilians
   def index
-    @civilians = Civilian.all
-
-    render json: @civilians
+    civilians = Civilian.all
+    render json: civilians, status: :ok
   end
-
-  # GET /civilians/1
+  
+  # GET /cities/1
   def show
-    render json: @civilian
+    civilian = Civilian.find(params[:civilian_id])
+    render json: civilian, status: :ok
   end
 
-  # POST /civilians
+  # POST /cities
   def create
-    @civilian = Civilian.new(civilian_params)
-
-    if @civilian.save
-      render json: @civilian, status: :created, location: @civilian
-    else
-      render json: @civilian.errors, status: :unprocessable_entity
-    end
+    civilian = Civilian.create!(civilian_params)
+    render json: civilian, status: :created, location: civilian
   end
 
-  # PATCH/PUT /civilians/1
+  # PATCH/PUT /cities/1
   def update
-    if @civilian.update(civilian_params)
-      render json: @civilian
-    else
-      render json: @civilian.errors, status: :unprocessable_entity
-    end
+    civilian.update!(civilian_params)
+    render json: civilian, status: :accepted
   end
 
-  # DELETE /civilians/1
+  # DELETE /cities/1
   def destroy
-    @civilian.destroy
+    civilian = Civilian.find(params[:civilian_id])
+    civilian.destroy
+    head :no_content
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_civilian
-      @civilian = Civilian.find(params[:id])
+      civilian = Civilian.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

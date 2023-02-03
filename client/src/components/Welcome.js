@@ -1,7 +1,8 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Welcome = ({setWelcome, width}) => {
-
+    const navigate = useNavigate()
 
 
     return (
@@ -11,7 +12,7 @@ const Welcome = ({setWelcome, width}) => {
                     <div className='welcomePage'>
                         <h1 className='header'>
                             Welcome to Cities Patrol !
-                            <button className='X' onClick={() => setWelcome(current => !current)}>X</button>
+                            <button className='X' onClick={() => setWelcome(navigate('/'))}>X</button>
                         </h1>
                         <h2 className='rulesHeader'>
                             How to Play:
@@ -30,7 +31,7 @@ const Welcome = ({setWelcome, width}) => {
                         <div className='welcomePage2'>
                             <h1 className='header2'>
                                 Welcome to Cities Patrol !
-                                <button className='X2' onClick={() => setWelcome(current => !current)}>X</button>
+                                <button className='X2' onClick={() => setWelcome(navigate('/'))}>X</button>
                             </h1>
                             <h2 className='rulesHeader2'>
                                 How to Play:
@@ -49,7 +50,7 @@ const Welcome = ({setWelcome, width}) => {
                         <div className='welcomePage3'>
                             <h1 className='header3'>
                                 Welcome to Cities Patrol !
-                                <button className='X3' onClick={() => setWelcome(current => !current)}>X</button>
+                                <button className='X3' onClick={() => setWelcome(navigate('/'))}>X</button>
                             </h1>
                             <h2 className='rulesHeader3'>
                                 How to Play:

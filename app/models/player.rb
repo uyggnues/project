@@ -1,4 +1,7 @@
 class Player < ApplicationRecord
+    has_many :favorites
+    has_many :criminals, through: :favorites
+
     validates :first_name, presence: true
     validates :last_name, presence: true
     validates :username, presence: true, length: {in: 6..20}, uniqueness: true

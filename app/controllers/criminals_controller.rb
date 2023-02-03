@@ -1,47 +1,40 @@
 class CriminalsController < ApplicationController
   before_action :set_criminal, only: %i[ show update destroy ]
 
-  # GET /criminals
   def index
-    @criminals = Criminal.all
-
-    render json: @criminals
+    criminals = Criminal.all
+    render json: criminals, status: :ok
   end
-
-  # GET /criminals/1
+  # GET /cities/1
   def show
-    render json: @criminal
+    criminal = Criminal.find(params[:criminal_id])
+    render json: criminal, status: :ok
   end
 
-  # POST /criminals
+  # POST /cities
   def create
-    @criminal = Criminal.new(criminal_params)
-
-    if @criminal.save
-      render json: @criminal, status: :created, location: @criminal
-    else
-      render json: @criminal.errors, status: :unprocessable_entity
-    end
+    criminal = Criminal.create!(criminal_params)
+    render json: criminal, status: :created, location: criminal
   end
 
-  # PATCH/PUT /criminals/1
+  # PATCH/PUT /cities/1
   def update
-    if @criminal.update(criminal_params)
-      render json: @criminal
-    else
-      render json: @criminal.errors, status: :unprocessable_entity
-    end
+    criminal.update!(criminal_params)
+    render json: criminal, status: :accepted
   end
 
-  # DELETE /criminals/1
+  # DELETE /cities/1
   def destroy
-    @criminal.destroy
+    criminal = Criminal.find(params[:criminal_id])
+    criminal.destroy
+    head :no_content
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_criminal
-      @criminal = Criminal.find(params[:id])
+      criminal = Criminal.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

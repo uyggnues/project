@@ -3,45 +3,40 @@ class FavoritesController < ApplicationController
 
   # GET /favorites
   def index
-    @favorites = Favorite.all
-
-    render json: @favorites
+    favorites = Favorite.all
+    render json: favorites, status: :ok
   end
 
-  # GET /favorites/1
+  # GET /cities/1
   def show
-    render json: @favorite
+    favorite = Favorite.find(params[:favorite_id])
+    render json: favorite, status: :ok
   end
 
-  # POST /favorites
+  # POST /cities
   def create
-    @favorite = Favorite.new(favorite_params)
-
-    if @favorite.save
-      render json: @favorite, status: :created, location: @favorite
-    else
-      render json: @favorite.errors, status: :unprocessable_entity
-    end
+    favorite = Favorite.create!(favorite_params)
+    render json: favorite, status: :created, location: favorite
   end
 
-  # PATCH/PUT /favorites/1
+  # PATCH/PUT /cities/1
   def update
-    if @favorite.update(favorite_params)
-      render json: @favorite
-    else
-      render json: @favorite.errors, status: :unprocessable_entity
-    end
+    favorite.update!(favorite_params)
+    render json: favorite, status: :accepted
   end
 
-  # DELETE /favorites/1
+  # DELETE /cities/1
   def destroy
-    @favorite.destroy
+    favorite = Favorite.find(params[:favorite_id])
+    favorite.destroy
+    head :no_content
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_favorite
-      @favorite = Favorite.find(params[:id])
+      favorite = Favorite.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

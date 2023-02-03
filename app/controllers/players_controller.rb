@@ -3,45 +3,40 @@ class PlayersController < ApplicationController
 
   # GET /players
   def index
-    @players = Player.all
-
-    render json: @players
+    players = Player.all
+    render json: players, status: :ok
   end
 
-  # GET /players/1
+  # GET /cities/1
   def show
-    render json: @player
+    player = Player.find(params[:player_id])
+    render json: player, status: :ok
   end
 
-  # POST /players
+  # POST /cities
   def create
-    @player = Player.new(player_params)
-
-    if @player.save
-      render json: @player, status: :created, location: @player
-    else
-      render json: @player.errors, status: :unprocessable_entity
-    end
+    player = Player.create!(player_params)
+    render json: player, status: :created, location: player
   end
 
-  # PATCH/PUT /players/1
+  # PATCH/PUT /cities/1
   def update
-    if @player.update(player_params)
-      render json: @player
-    else
-      render json: @player.errors, status: :unprocessable_entity
-    end
+    player.update!(player_params)
+    render json: player, status: :accepted
   end
 
-  # DELETE /players/1
+  # DELETE /cities/1
   def destroy
-    @player.destroy
+    player = Player.find(params[:player_id])
+    player.destroy
+    head :no_content
   end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_player
-      @player = Player.find(params[:id])
+      player = Player.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.
