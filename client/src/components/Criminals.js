@@ -21,12 +21,17 @@ const Criminals = () => {
     })
 
     return (
-        <>
-            <button onClick={() => navigate('/')}>Back to Cities</button>
+        <div className='padding'>
+            <div className='signButton'>
+            <button className='toCities' onClick={() => navigate('/')}>Back to Cities</button>
+            </div>
             <div className='criminalCard'>
                 {mappedCriminals}
+                <div>
+                    <button>Add a Criminal</button>
+                </div>
             </div>
-        </>
+        </div>
     );
 }
 

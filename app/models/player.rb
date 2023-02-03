@@ -1,6 +1,7 @@
 class Player < ApplicationRecord
     has_many :favorites
-    has_many :criminals, through: :favorites
+    # has_many :criminals, through: :favorites
+    has_many :fav_criminals, through: :favorites, source: :criminal
 
     validates :first_name, presence: true
     validates :last_name, presence: true

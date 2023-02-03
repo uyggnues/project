@@ -151,21 +151,26 @@ html{
 }
 
 .criminalCard{
+  background-image: url('https://media.istockphoto.com/vectors/wood-texture-background-illustration-vector-vector-id1191803750?k=6&m=1191803750&s=612x612&w=0&h=WaDKJNob9uIuDUuywyUExCFdueZOTn3QpYgVL7IOxwA=');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
   border: 5px solid;
   overflow-x: auto;
-  max-height: 65rem;
+  height: 65rem;
   width: inherit;
   display: flex;
 }
 
 .criminalCard::-webkit-scrollbar{
-  width: 5;
+  width: 10;
 }
 .wantedPoster{
   text-align: center;
   position: relative;
   height: 55rem;
-  width: 40rem;
+  width: 41rem;
   justify-content: space-between;
   text-align: center;
   display: flex;
@@ -198,6 +203,7 @@ html{
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+  font-family: 'Permanent Marker', cursive;
 }
 
 .back{
@@ -208,6 +214,13 @@ html{
   background-size: cover;
   transform: rotateY(180deg);
   border: 5px solid rgb(138, 90, 0);
+  padding: .5rem;
+  font-family: 'Permanent Marker', cursive;
+  overflow: auto;
+}
+
+.back::-webkit-scrollbar{
+  width: 0;
 }
 
 .image{
@@ -218,17 +231,39 @@ html{
 }
 
 .bounty{
-  margin-top: 15%;
-  font-size: 6rem;
+  margin-top: 12%;
+  font-size: 5.5rem;
 }
 
 .posterText{
-  font-size: 3rem;
+  font-size: 3.8rem;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 4rem;
+  padding-top: .5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
 }
 
+.signButton{
+  background-image: url('http://www.clker.com/cliparts/z/a/N/v/Y/J/sign-md.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  height: 10rem;
+  width: 13rem;
+  text-align: center;
+  
+}
+
+.toCities{
+  font-size: 2rem;
+  background-color: transparent;
+  width: 8rem;
+  margin-top: 1.5rem;
+  border: 0;
+  font-family: 'Unbounded', cursive;
+}
 /* ================================================================================================================================ */
 .welcomePageBackground2{
   overflow: hidden;

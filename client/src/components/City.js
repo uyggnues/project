@@ -6,6 +6,7 @@ const City = ({city, width}) => {
 
     const navigate = useNavigate()
 
+
     const handleClick = () => {
         navigate(`/cities/${city.id}/criminals`)
         // debugger
