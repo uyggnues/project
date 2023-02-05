@@ -24,6 +24,13 @@ class CitiesController < ApplicationController
     render json: city, status: :created, location: city
   end
 
+  def new_criminals
+    city = City.find(params[:city_id])
+    debugger
+    new_city = city.criminals.Criminal.create()
+    render json: new_city, status: :created
+  end
+
   # PATCH/PUT /cities/1
   def update
     city.update!(city_params)

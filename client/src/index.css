@@ -387,6 +387,16 @@ html{
   background-color: rgb(104, 61, 0);
   border: 5px dashed rgb(104, 61, 0);
 }
+
+.formX{
+  float: right;
+  font-size: 3rem;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  background-color: transparent;
+  border: 0;
+  font-family: 'Permanent Marker', cursive;
+}
 /* ================================================================================================================================ */
 .welcomePageBackground2{
   overflow: hidden;

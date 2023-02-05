@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate} from 'react-router-dom'
 import validator from 'validator'
 
 const NewCriminal = ({setCities}) => {
     const params = useParams()
+    const navigate = useNavigate()
     const cityId = parseInt(params.city_id)
-    // debugger
-
+    
     const [newCriminal, setNewCriminal] = useState({
         name: "",
         age: 0,
@@ -19,6 +19,8 @@ const NewCriminal = ({setCities}) => {
         in_jail: false,
         city: cityId
     })
+    
+    // debugger
 
     const handleChange = (e) => {
         setNewCriminal({...newCriminal, [e.target.name]:e.target.value})
@@ -27,7 +29,7 @@ const NewCriminal = ({setCities}) => {
     const handleSubmit = (e) => {
         e.preventDefault()
 
-        fetch(`http://localhost:3000/cities/${cityId}/criminals`, {
+        fetch(`http://localhost:4000/cities/${cityId}/criminals`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -37,7 +39,7 @@ const NewCriminal = ({setCities}) => {
         .then(res => res.json())
         .then(data => {
             setCities(current => {
-                debugger
+                // debugger
                 // return[data, ...current]
             })
         })
@@ -45,6 +47,7 @@ const NewCriminal = ({setCities}) => {
 
     return (
         <div className='formCard'>
+            <button className='formX' onClick={() => navigate(`/cities/${cityId}/criminals`)}>X</button>
             <div className="newCriminalImage">
                 {validator.isURL(newCriminal.image) ? <img className="image2" src={newCriminal.image} alt="Invalid"/> : <p className="imgText">
                 Place Image_url here

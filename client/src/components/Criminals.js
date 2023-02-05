@@ -54,7 +54,7 @@ const Criminals = () => {
                         <div className='catchButton2'>
                             <button className='catch2'>CATCH!</button>
                         </div>
-                        <button className='addButton2' >Add a Criminal</button>
+                        <button onClick={() => navigate(`/cities/${cityId}/NewCriminal`)} className='addButton2' >Add a Criminal</button>
                     </div>
                     <div className='criminalCard2'>
                         {mappedCriminals}
@@ -69,7 +69,7 @@ const Criminals = () => {
                         <div className='catchButton3'>
                             <button className='catch3'>CATCH!</button>
                         </div>
-                        <button className='addButton3' >Add a Criminal</button>
+                        <button onClick={() => navigate(`/cities/${cityId}/NewCriminal`)} className='addButton3' >Add a Criminal</button>
                     </div>
                     <div className='criminalCard3'>
                         {mappedCriminals}
