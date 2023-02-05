@@ -1,10 +1,26 @@
 import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 
     
 const Criminal = ({criminal, width}) => {
-        const bounty = criminal.age + criminal.sentenced
-        const criminalsHeight = Math.round(criminal.height * 10)/10
-        console.log(width)
+    const params = useParams()
+    const cityId = parseInt(params.city_id)
+    const navigate = useNavigate()
+    const bounty = criminal.age + criminal.sentenced
+    const criminalsHeight = Math.round(criminal.height * 10)/10
+    // console.log(width)
+
+    const deleteCriminal = () => {
+        fetch(`http://localhost:4000/cities/${cityId}/criminals`, {
+            method: 'DELETE'
+        })
+        .then(res => res.json())
+        // .then(criminal =>             
+        //     setCriminals(current => {
+        //     const criminalId = current.findIndex(ele => ele.id === criminal.id)
+        //     return [...current.slice(0, criminalId), ...current.slice(criminalId + 1)]
+        // }))
+    }
 
     return (
         <div className='padding'>
@@ -12,7 +28,8 @@ const Criminal = ({criminal, width}) => {
                 {width > 1500 && !criminal.in_jail ?
                     <div className='wantedPoster'>
                         <div>
-                            <button className='updateButton'>Update Info</button>
+                            <button className='updateButton' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal`)}>Update Info</button>
+                            <button className='deleteButton' onClick={deleteCriminal}>Delete</button>
                             <div className='card'>
                                 <div className='front'>
                                     <img className="image" src={criminal.image} alt="post"/>
@@ -25,7 +42,7 @@ const Criminal = ({criminal, width}) => {
                                     <div className='posterText'>Birthday: {criminal.birthday}</div>
                                     <div className='posterText'>Height: {criminalsHeight}ft</div>
                                     <div className='posterText'>Weight: {criminal.weight}Ib</div>
-                                    <div className='posterText'>Sentenced: {criminal.sentenced}</div>
+                                    <div className='posterText'>Sentenced: {criminal.sentenced} years</div>
                                 </div>
                             </div>
                         </div>
@@ -35,7 +52,8 @@ const Criminal = ({criminal, width}) => {
                         {width >= 800 && !criminal.in_jail ?
                         <div className='wantedPoster2'>
                             <div>
-                                <button className='updateButton2'>Update Info</button>
+                                <button className='updateButton2' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal`)}>Update Info</button>
+                                <button className='deleteButton' onClick={deleteCriminal}>Delete</button>
                                 <div className='card2'>
                                     <div className='front2'>
                                         <img className="image2" src={criminal.image} alt="post"/>
@@ -58,7 +76,8 @@ const Criminal = ({criminal, width}) => {
                         {width < 800 && !criminal.in_jail ?
                         <div className='wantedPoster3'>
                             <div>
-                                <button className='updateButton3'>Update Info</button>
+                                <button className='updateButton3' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal`)}>Update Info</button>
+                                <button className='deleteButton' onClick={deleteCriminal}>Delete</button>
                                 <div className='card3'>
                                     <div className='front3'>
                                         <img className="image3" src={criminal.image} alt="post"/>

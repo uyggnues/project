@@ -18,31 +18,13 @@ class CitiesController < ApplicationController
     render json: city, status: :ok
   end
 
-  # POST /cities
-  def create
-    city = City.create!(city_params)
-    render json: city, status: :created, location: city
-  end
-
   def new_criminals
     city = City.find(params[:city_id])
-    debugger
-    new_city = city.criminals.Criminal.create()
+    # debugger
+    new_city = Criminal.create(criminal_params)
     render json: new_city, status: :created
   end
 
-  # PATCH/PUT /cities/1
-  def update
-    city.update!(city_params)
-    render json: city, status: :accepted
-  end
-
-  # DELETE /cities/1
-  def destroy
-    city = City.find(params[:city_id])
-    city.destroy
-    head :no_content
-  end
 
 private
     # Use callbacks to share common setup or constraints between actions.
@@ -52,6 +34,10 @@ private
     # Only allow a list of trusted parameters through.
     def city_params
       params.require(:city).permit(:name, :population)
+    end
+
+    def criminal_params
+      params.permit(:name, :age, :address, :birthday, :height, :weight, :image, :sentenced, :in_jail, :city_id)
     end
 
 end
