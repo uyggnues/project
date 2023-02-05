@@ -158,7 +158,7 @@ html{
   background-size: cover;
   border: 5px solid;
   overflow-x: auto;
-  height: 65rem;
+  height: 60rem;
   width: inherit;
   display: flex;
 }
@@ -169,8 +169,8 @@ html{
 .wantedPoster{
   text-align: center;
   position: relative;
-  height: 55rem;
-  width: 41rem;
+  height: 46rem;
+  width: 35rem;
   justify-content: space-between;
   text-align: center;
   display: flex;
@@ -224,15 +224,15 @@ html{
 }
 
 .image{
-  margin-top: 12.5rem;
-  height: 22rem;
-  width: 32rem;
+  margin-top: 10.5rem;
+  height: 18rem;
+  width: 26.5rem;
   border: 5px solid rgb(138, 90, 0);
 }
 
 .bounty{
   margin-top: 12%;
-  font-size: 5.5rem;
+  font-size: 5rem;
 }
 
 .posterText{
@@ -245,6 +245,17 @@ html{
 }
 
 .signButton{
+  justify-content: space-between;
+  display: flex;
+  
+}
+
+.toCities, .addButton, .catchButton{
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+  margin-top: 1.5rem;
+  font-family: 'Unbounded', cursive;
   background-image: url('http://www.clker.com/cliparts/z/a/N/v/Y/J/sign-md.png');
   background-position: center;
   background-repeat: no-repeat;
@@ -253,16 +264,128 @@ html{
   height: 10rem;
   width: 13rem;
   text-align: center;
+}
+
+.addButton{
+  margin-right: 0;
+}
+.catchButton{
+  background-image: url('http://www.clker.com/cliparts/Y/g/u/i/Z/o/red-arrow-md.png');
+  width: 15rem;
+}
+
+.catch{
+  background-color: transparent;
+  border: 0;
+  margin-top: 2.5rem;
+  font-size: 2.5rem;
+  font-family: 'Unbounded', cursive;
+}
+
+.updateButton{
+  height: 7rem;
+  width: 8rem;
+  margin-left: 13rem;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  font-family: 'Permanent Marker', cursive;
+  background-image: url('https://www.jing.fm/clipimg/full/55-553284_blank-hanging-wooden-sign.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
+.formCard {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 2rem;
+  margin: auto;
+  text-align: center;
+  height: 70rem;
+  width: 50rem;
+  background-image: url('https://oakdome.com/k5/lesson-plans/photo-editing/wanted-poster/blank-wanted-poster.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  border: 5px dashed rgba(104, 61, 0, 0.549);
+  border-radius: 5rem;
+}
+
+.newCriminalImage{
+  margin-left: 16rem;
+  margin-top: 2rem;
+  border: 5px solid;
+  border-radius: 5px;
+  background-color: rgb(175, 175, 175);
+  height: 370px;
+  width: 260px;
   
 }
 
-.toCities{
-  font-size: 2rem;
+.formLabel{
+  float:left;
+  padding-left: 2rem;
+}
+
+.formTextBox{
+  float: left;
+  margin-top: .5rem;
+  margin-left: 1rem;
   background-color: transparent;
-  width: 8rem;
-  margin-top: 1.5rem;
   border: 0;
-  font-family: 'Unbounded', cursive;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5rem;
+  background-color: rgba(104, 61, 0, 0.549);
+  border: 0;
+  border-radius: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.formRange{
+  float: left;
+  margin-top: .5rem;
+  margin-left: 5rem;
+  width: 40rem;
+}
+
+
+.formCalendar{
+  float: left;
+  margin-top: .5rem;
+  margin-left: 1rem;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5rem;
+  background-color: rgba(104, 61, 0, 0.549);
+  border: 0;
+  border-radius: 5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.formCheckBox{
+  float: left;
+  margin-top: .5rem;
+  margin-left: 1rem;
+  height: 2rem;
+  width: 2rem;
+}
+
+.submitButton{
+  background-color: rgba(104, 61, 0, 0.745);
+  border: 0;
+  border-radius: 5rem;
+  font-size: 3rem;
+  padding: 1rem;
+  font-family: 'Permanent Marker', cursive;
+  border: 5px dashed rgb(104, 61, 0);
+}
+
+.submitButton:hover{
+  background-color: rgb(104, 61, 0);
+  border: 5px dashed rgb(104, 61, 0);
 }
 /* ================================================================================================================================ */
 .welcomePageBackground2{
@@ -408,6 +531,154 @@ html{
   left: -15rem;
   top: -6rem;
 }
+
+.criminalCard2{
+  background-image: url('https://media.istockphoto.com/vectors/wood-texture-background-illustration-vector-vector-id1191803750?k=6&m=1191803750&s=612x612&w=0&h=WaDKJNob9uIuDUuywyUExCFdueZOTn3QpYgVL7IOxwA=');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  border: 5px solid;
+  overflow-x: auto;
+  height: 50rem;
+  width: inherit;
+  display: flex;
+}
+
+.criminalCard2::-webkit-scrollbar{
+  width: 5;
+}
+.wantedPoster2{
+  text-align: center;
+  position: relative;
+  height: 35rem;
+  width: 26rem;
+  justify-content: space-between;
+  text-align: center;
+  display: flex;
+}
+
+
+.card2{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.card2:hover {
+  transform: rotateY(180deg)
+}
+
+.front2, .back2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front2{
+  background-image: url('https://i.pinimg.com/originals/97/c1/fb/97c1fb00d62209f4b7646327cffe1405.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.back2{
+  background-image: url('https://oakdome.com/k5/lesson-plans/photo-editing/wanted-poster/blank-wanted-poster.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  transform: rotateY(180deg);
+  border: 5px solid rgb(138, 90, 0);
+  padding: .5rem;
+  font-family: 'Permanent Marker', cursive;
+  overflow: auto;
+}
+
+.back2::-webkit-scrollbar{
+  width: 0;
+}
+
+.image2{
+  margin-top: 8rem;
+  height: 14rem;
+  width: 20rem;
+  border: 5px solid rgb(138, 90, 0);
+}
+
+.bounty2{
+  margin-top: 12%;
+  font-size: 3.5rem;
+}
+
+.posterText2{
+  font-size: 2.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: .5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.signButton2{
+  justify-content: space-between;
+  display: flex;
+  
+}
+
+.toCities2, .addButton2, .catchButton2{
+  font-size: 2rem;
+  background-color: transparent;
+  border: 0;
+  margin-top: 1.5rem;
+  font-family: 'Unbounded', cursive;
+  background-image: url('http://www.clker.com/cliparts/z/a/N/v/Y/J/sign-md.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  height: 10rem;
+  width: 13rem;
+  text-align: center;
+}
+
+.addButton2{
+  margin-right: 0;
+}
+.catchButton2{
+  background-image: url('http://www.clker.com/cliparts/Y/g/u/i/Z/o/red-arrow-md.png');
+  width: 15rem;
+}
+
+.catch2{
+  background-color: transparent;
+  border: 0;
+  margin-top: 2.5rem;
+  font-size: 2.5rem;
+  font-family: 'Unbounded', cursive;
+}
+
+.updateButton2{
+  height: 7rem;
+  width: 8rem;
+  margin-left: 9rem;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  font-family: 'Permanent Marker', cursive;
+  background-image: url('https://www.jing.fm/clipimg/full/55-553284_blank-hanging-wooden-sign.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+}
+
 /* ================================================================================================================================ */
 .welcomePageBackground3{
   overflow: hidden;
@@ -553,4 +824,149 @@ html{
   margin-left: 50%;
   left: -15rem;
   top: -6rem;
+}
+
+.criminalCard3{
+  background-image: url('https://media.istockphoto.com/vectors/wood-texture-background-illustration-vector-vector-id1191803750?k=6&m=1191803750&s=612x612&w=0&h=WaDKJNob9uIuDUuywyUExCFdueZOTn3QpYgVL7IOxwA=');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  border: 5px solid;
+  overflow-x: auto;
+  height: 40rem;
+  width: inherit;
+  display: flex;
+}
+
+.criminalCard3::-webkit-scrollbar{
+  width: 5;
+}
+.wantedPoster3{
+  text-align: center;
+  position: relative;
+  height: 25rem;
+  width: 18rem;
+  text-align: center;
+  display: flex;
+}
+
+
+.card3{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
+
+.card3:hover {
+  transform: rotateY(180deg)
+}
+
+.front3, .back3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front3{
+  background-image: url('https://i.pinimg.com/originals/97/c1/fb/97c1fb00d62209f4b7646327cffe1405.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  font-family: 'Permanent Marker', cursive;
+}
+
+.back3{
+  background-image: url('https://oakdome.com/k5/lesson-plans/photo-editing/wanted-poster/blank-wanted-poster.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  transform: rotateY(180deg);
+  border: 5px solid rgb(138, 90, 0);
+  font-family: 'Permanent Marker', cursive;
+  overflow: auto;
+}
+
+.back3::-webkit-scrollbar{
+  width: 0;
+}
+
+.image3{
+  margin-top: 5.5rem;
+  height: 10rem;
+  width: 14rem;
+  border: 5px solid rgb(138, 90, 0);
+}
+
+.bounty3{
+  margin-top: 12%;
+  font-size: 2.5rem;
+}
+
+.posterText3{
+  font-size: 1.6rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: .5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.signButton3{
+  justify-content: space-between;
+  display: flex;
+  
+}
+
+.toCities3, .addButton3, .catchButton3{
+  font-size: 1rem;
+  background-color: transparent;
+  border: 0;
+  margin-top: 1.5rem;
+  font-family: 'Unbounded', cursive;
+  background-image: url('http://www.clker.com/cliparts/z/a/N/v/Y/J/sign-md.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  height: 4rem;
+  width: 5rem;
+  text-align: center;
+}
+
+.addButton3{
+  margin-right: 0;
+}
+.catchButton3{
+  background-image: url('http://www.clker.com/cliparts/Y/g/u/i/Z/o/red-arrow-md.png');
+  width: 7rem;
+}
+
+.catch3{
+  background-color: transparent;
+  border: 0;
+  margin-top: .8rem;
+  font-size: 1.3rem;
+  font-family: 'Unbounded', cursive;
+}
+
+.updateButton3{
+  height: 7rem;
+  width: 8rem;
+  margin-left: 5rem;
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+  font-family: 'Permanent Marker', cursive;
+  background-image: url('https://www.jing.fm/clipimg/full/55-553284_blank-hanging-wooden-sign.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
 }

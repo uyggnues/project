@@ -7,26 +7,26 @@ class CriminalsController < ApplicationController
   end
   # GET /cities/1
   def show
-    criminal = Criminal.find(params[:criminal_id])
-    render json: criminal, status: :ok
+    @criminal = Criminal.find(params[:criminal_id])
+    render json: @criminal, status: :ok
   end
 
   # POST /cities
   def create
-    criminal = Criminal.create!(criminal_params)
-    render json: criminal, status: :created, location: criminal
+    @criminal = Criminal.create!(criminal_params)
+    render json: @criminal, status: :created, location: criminal
   end
 
   # PATCH/PUT /cities/1
   def update
-    criminal.update!(criminal_params)
-    render json: criminal, status: :accepted
+    @criminal.update!(criminal_params)
+    render json: @criminal, status: :accepted
   end
 
   # DELETE /cities/1
   def destroy
-    criminal = Criminal.find(params[:criminal_id])
-    criminal.destroy
+    @criminal = Criminal.find(params[:criminal_id])
+    @criminal.destroy
     head :no_content
   end
 
@@ -34,7 +34,7 @@ class CriminalsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_criminal
-      criminal = Criminal.find(params[:id])
+      @criminal = Criminal.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

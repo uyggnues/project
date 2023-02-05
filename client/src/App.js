@@ -7,6 +7,7 @@ import Signup from './components/Signup';
 import Error from './components/Error';
 import Criminals from './components/Criminals';
 import Welcome from './components/Welcome'
+import NewCriminal from './components/NewCriminal';
 
 function useWindowSize () {
   const [size, setSize] = useState([window.innerHeight, window.innerWidth])
@@ -31,18 +32,19 @@ function App() {
     fetch("http://localhost:4000/cities")
     .then(resp => resp.json())
     .then(data => setCities(data))//setPost(data))
-    }, []);
+  }, []);
 
-    // console.log(cities)
+
 
   return (
     <div>
       <Routes>
-        <Route path='/' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome}/>} />
-        <Route path='/Login' element={<Login />} />
+        <Route path='/cities/:city_id/NewCriminal' element={<NewCriminal setCities={setCities}/>} />
+        <Route path='/cities/:city_id/criminals' element={<Criminals />} />
         <Route path='/Welcome' element={<Welcome setWelcome={setWelcome} width={width}/>} />
         <Route path='/Signup' element={<Signup />} />
-        <Route path='/cities/:city_id/criminals' element={<Criminals />} />
+        <Route path='/Login' element={<Login />} />
+        <Route path='/' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome}/>} />
         <Route path='*' element={<Error />} />
       </Routes>
      
