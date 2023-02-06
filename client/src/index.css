@@ -157,7 +157,8 @@ html{
   background-attachment: scroll;
   background-size: cover;
   border: 5px solid;
-  overflow-x: auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
   height: 60rem;
   width: inherit;
   display: flex;

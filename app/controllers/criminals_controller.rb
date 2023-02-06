@@ -26,7 +26,8 @@ class CriminalsController < ApplicationController
   end
 
   def delete_criminal
-    criminal = Criminal.find(params[:city_id])
+    criminal = Criminal.find(params[:id])
+    debugger
     criminal.destroy
     head :no_content
   end

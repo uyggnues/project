@@ -20,6 +20,7 @@ const NewCriminal = ({setCities}) => {
         city: cityId
     })
     
+    const [errors, setErrors] = useState([])
     // debugger
 
     const handleChange = (e) => {
@@ -34,19 +35,22 @@ const NewCriminal = ({setCities}) => {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(newCriminal)
+            body: JSON.stringify(newCriminal) 
         })
-        .then(res => res.json())
-        .then(data => {
-            setCities(current => {
-                
-            })
-        })
-        navigate(`/cities/${cityId}/criminals`)
+        .then(res => {
+            if(res.ok){
+              res.json().then()
+              navigate(`/cities/${cityId}/criminals`)
+            } else {
+              //Display errors
+              res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+            }
+          })
     }
 
     return (
         <div className='formCard'>
+            {errors?errors.map(e => <div>{e}</div>):null}
             <button className='formX' onClick={() => navigate(`/cities/${cityId}/criminals`)}>X</button>
             <div className="newCriminalImage">
                 {validator.isURL(newCriminal.image) ? <img className="displayImage" src={newCriminal.image} alt="Invalid"/> : <p className="imgText">
@@ -108,7 +112,7 @@ const NewCriminal = ({setCities}) => {
                 <label className='formLabel'>caught?</label>
                 <input className='formCheckBox' type='checkbox' name='in_jail' value={newCriminal.in_jail} onChange={handleChange}/>
                 <br/>
-                <button className='submitButton'>Add!</button>
+                    <button className='submitButton'>Add!</button>
             </form>
         </div>
     );

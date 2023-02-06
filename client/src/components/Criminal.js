@@ -11,7 +11,7 @@ const Criminal = ({criminal, width}) => {
     // console.log(width)
 
     const deleteCriminal = () => {
-        fetch(`http://localhost:4000/cities/${cityId}/criminals`, {
+        fetch(`http://localhost:3000/cities/${cityId}/criminals`, {
             method: 'DELETE'
         })
         .then(res => res.json())

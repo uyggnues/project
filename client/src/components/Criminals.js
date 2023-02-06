@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom'
+import HorizontalScroll from 'react-scroll-horizontal';
 import Criminal from './Criminal';
 
 function useWindowSize () {
@@ -42,7 +43,12 @@ const Criminals = () => {
                         <button onClick={() => navigate(`/cities/${cityId}/NewCriminal`)} className='addButton' >Add a Criminal</button>
                     </div>
                     <div className='criminalCard'>
-                        {mappedCriminals}
+                        <HorizontalScroll 
+                            pageLock={true}
+                            reverseScroll={true}
+                            >
+                            {mappedCriminals}
+                        </HorizontalScroll>
                     </div>
                 </div>
                 :
@@ -57,7 +63,12 @@ const Criminals = () => {
                         <button onClick={() => navigate(`/cities/${cityId}/NewCriminal`)} className='addButton2' >Add a Criminal</button>
                     </div>
                     <div className='criminalCard2'>
-                        {mappedCriminals}
+                        <HorizontalScroll 
+                            pageLock={true}
+                            reverseScroll={true}
+                            >
+                            {mappedCriminals}
+                        </HorizontalScroll>
                     </div>
                 </div>
                 :
@@ -72,7 +83,12 @@ const Criminals = () => {
                         <button onClick={() => navigate(`/cities/${cityId}/NewCriminal`)} className='addButton3' >Add a Criminal</button>
                     </div>
                     <div className='criminalCard3'>
-                        {mappedCriminals}
+                        <HorizontalScroll 
+                            pageLock={true}
+                            reverseScroll={true}
+                            >
+                            {mappedCriminals}
+                        </HorizontalScroll>
                     </div>
                 </div>
                 :

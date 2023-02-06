@@ -26,7 +26,7 @@ function useWindowSize () {
 function App() {
   const [welcome, setWelcome] = useState(true)
   const [cities, setCities] = useState([])
-  const[height, width] = useWindowSize();
+  const [height, width] = useWindowSize();
 
   
   useEffect(() => {
@@ -36,13 +36,12 @@ function App() {
   }, []);
 
 
-
   return (
     <div>
       <Routes>
-        <Route path='/cities/:city_id/UpdateCriminal' element={<UpdateCriminal cities={cities} setCities={setCities}/>} />
+        <Route path='/cities/:city_id/UpdateCriminal' element={<UpdateCriminal cities={cities} setCities={setCities} />} />
         <Route path='/cities/:city_id/NewCriminal' element={<NewCriminal setCities={setCities}/>} />
-        <Route path='/cities/:city_id/criminals' element={<Criminals />} />
+        <Route path='/cities/:city_id/criminals' element={<Criminals/>} />
         <Route path='/Welcome' element={<Welcome setWelcome={setWelcome} width={width}/>} />
         <Route path='/Signup' element={<Signup />} />
         <Route path='/Login' element={<Login />} />
