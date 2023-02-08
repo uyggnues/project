@@ -9,7 +9,7 @@ const UpdateCriminal = ({cities, setCities}) => {
     const cityId = parseInt(params.city_id)
     const criminalId = parseInt(params.criminal_id)
     const criminal = location.state.criminal
-    const [UpdateCriminal, setUpdateCriminal] = useState({
+    const [updateCriminal, setUpdateCriminal] = useState({
         name: criminal.name,
         age: criminal.age,
         address: criminal.address,
@@ -21,10 +21,9 @@ const UpdateCriminal = ({cities, setCities}) => {
         in_jail: criminal.in_jail,
         city: cityId
     })
-// debugger
-    // console.log(criminal)
+
     const handleChange = (e) => {
-        setUpdateCriminal({...UpdateCriminal, [e.target.name]:e.target.value})
+        setUpdateCriminal({...updateCriminal, [e.target.name]:e.target.value})
     }
 
     const handleSubmit = (e) => {
@@ -37,11 +36,13 @@ const UpdateCriminal = ({cities, setCities}) => {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(UpdateCriminal)
+        body: JSON.stringify(updateCriminal)
         })
         .then(resp => {
             if (resp.ok) {
                 navigate(`/cities/${cityId}/criminals`)
+            } else {
+                
             }
         })
     }
@@ -50,13 +51,13 @@ const UpdateCriminal = ({cities, setCities}) => {
         <div className='formCard'>
             <button className='formX' onClick={() => navigate(`/cities/${cityId}/criminals`)}>X</button>
             <div className="newCriminalImage">
-                {validator.isURL(UpdateCriminal.image) ? <img className="displayImage" src={UpdateCriminal.image} alt="Invalid"/> : <p className="imgText">
+                {validator.isURL(updateCriminal.image) ? <img className="displayImage" src={updateCriminal.image} alt="Invalid"/> : <p className="imgText">
                 Place Image_url here
                 </p>}
             </div>
             <form onSubmit={handleSubmit}>
                 <label className='formLabel'>Name:</label>
-                <input className='formTextBox' type='text' name='name' placeholder='criminal name' value={UpdateCriminal.name} onChange={handleChange}/>
+                <input className='formTextBox' type='text' name='name' placeholder='criminal name' value={updateCriminal.name} onChange={handleChange}/>
                 <br/>
                 <input
                     className='formRange'
@@ -64,20 +65,20 @@ const UpdateCriminal = ({cities, setCities}) => {
                     name="age"
                     min="10"
                     max="80"
-                    value={UpdateCriminal.age}
+                    value={updateCriminal.age}
                     onChange={handleChange}
                 />
                 <br/>
-                <label className='formLabelRange'>Age: {UpdateCriminal.age}</label>
+                <label className='formLabelRange'>Age: {updateCriminal.age}</label>
                 <br/>
                 <label className='formLabel'>Address:</label>
-                <input className='formTextBox' type='text' name='address' placeholder='criminal address' value={UpdateCriminal.address} onChange={handleChange}/>
+                <input className='formTextBox' type='text' name='address' placeholder='criminal address' value={updateCriminal.address} onChange={handleChange}/>
                 <br/>
                 <label className='formLabel'>Birthday:</label>
-                <input className='formCalendar' type='date' name='birthday' placeholder='criminal birthday' value={UpdateCriminal.birthday} onChange={handleChange}/>
+                <input className='formCalendar' type='date' name='birthday' placeholder='criminal birthday' value={updateCriminal.birthday} onChange={handleChange}/>
                 <br/>
                 <label className='formLabel'>Height:</label>
-                <input className='formTextBox' type='text' name='height' placeholder='criminal height in ft' value={UpdateCriminal.height} onChange={handleChange}/>
+                <input className='formTextBox' type='text' name='height' placeholder='criminal height in ft' value={updateCriminal.height} onChange={handleChange}/>
                 <br/>
                 <input
                     className='formRange'
@@ -85,14 +86,14 @@ const UpdateCriminal = ({cities, setCities}) => {
                     name="weight"
                     min="100"
                     max="350"
-                    value={UpdateCriminal.weight}
+                    value={updateCriminal.weight}
                     onChange={handleChange}
                 />
                 <br/>
-                <label className='formLabelRange'>weight: {UpdateCriminal.weight}</label>
+                <label className='formLabelRange'>weight: {updateCriminal.weight}</label>
                 <br/>
                 <label className='formLabel'>Image_url:</label>
-                <input className='formTextBox' type='text' name='image' placeholder='criminal image' value={UpdateCriminal.image} onChange={handleChange}/>
+                <input className='formTextBox' type='text' name='image' placeholder='criminal image' value={updateCriminal.image} onChange={handleChange}/>
                 <br/>
                 <input
                     className='formRange'
@@ -100,14 +101,14 @@ const UpdateCriminal = ({cities, setCities}) => {
                     name="sentenced"
                     min="1"
                     max="100"
-                    value={UpdateCriminal.sentenced}
+                    value={updateCriminal.sentenced}
                     onChange={handleChange}
                 />
                 <br/>
-                <label className='formLabelRange'>sentenced amount: {UpdateCriminal.sentenced}</label>
+                <label className='formLabelRange'>sentenced amount: {updateCriminal.sentenced}</label>
                 <br/>
                 <label className='formLabel'>caught?</label>
-                <input className='formCheckBox' type='checkbox' name='in_jail' value={UpdateCriminal.in_jail} onChange={handleChange}/>
+                <input className='formCheckBox' type='checkbox' name='in_jail' value={updateCriminal.in_jail} onChange={handleChange}/>
                 <br/>
                 <button className='submitButton'>UPDATE!</button>
             </form>

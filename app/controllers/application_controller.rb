@@ -5,7 +5,7 @@ class ApplicationController < ActionController::API
 
     private
     def invalid_error(invalid)
-        render json: {errors: invalid.record.errors}, status: :unprocessable_entity
+        render json: {errors: invalid.record.errors.full_message}, status: :unprocessable_entity
     end
 
     def not_found_error(invalid)

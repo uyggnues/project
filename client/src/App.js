@@ -9,6 +9,7 @@ import Welcome from './components/Welcome'
 import NewCriminal from './components/NewCriminal';
 import UpdateCriminal from './components/UpdateCriminal';
 import Jail from './components/Jail';
+import Game from './components/Game';
 
 function useWindowSize () {
   const [size, setSize] = useState([window.innerHeight, window.innerWidth])
@@ -42,6 +43,7 @@ function App() {
         <Route path='/cities/:city_id/UpdateCriminal/:criminal_id' element={<UpdateCriminal cities={cities} setCities={setCities} />} />
         <Route path='/cities/:city_id/NewCriminal' element={<NewCriminal setCities={setCities}/>} />
         <Route path='/cities/:city_id/criminals' element={<Criminals/>} />
+        <Route path='/cities/:city_id/catch' element={<Game/>} />
         <Route path='/cities/:city_id/jail' element={<Jail />} />
         <Route path='/Welcome' element={<Welcome setWelcome={setWelcome} width={width}/>} />
         <Route path='/Signup' element={<Signup />} />

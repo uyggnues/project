@@ -1,25 +1,24 @@
 import React from 'react';
 
 const CaughtCriminals = ({criminal, width}) => {
+
+    const criminalHeight = Math.round(criminal.height * 10)/10
     return (
         <div>
-            {width > 0 && criminal.in_jail ?
-                <div className='folder'>
+            <div className='folder'>
                     <div className='leftFolder'>
-                        <img className="image" src={criminal.image} alt="post"/>
+                        <img className="jailImage" src={criminal.image} alt="post"/>
+                        <p className='classified'>CLASSIFIED</p>
                     </div>
-                    <div className='rightFolder'>
-                        <div>{criminal.name}</div>
-                        <div>{criminal.age}</div>
-                        <div>{criminal.birthday}</div>
-                        <div>{criminal.height}</div>
-                        <div>{criminal.weight}</div>
-                        <div>{criminal.sentenced}</div>
-                    </div>
+                <div className='rightFolder'>
+                    <div className='jailText'>name: {criminal.name}</div>
+                    <div className='jailText'>age: {criminal.age}</div>
+                    <div className='jailText'>birthday: {criminal.birthday}</div>
+                    <div className='jailText'>height: {criminalHeight}</div>
+                    <div className='jailText'>weight: {criminal.weight}</div>
+                    <div className='jailText'>sentenced: {criminal.sentenced}</div>
                 </div>
-                :
-                null
-            }
+            </div>
         </div>
     );
 }
