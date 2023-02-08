@@ -157,11 +157,11 @@ html{
   background-attachment: scroll;
   background-size: cover;
   border: 5px solid;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  overflow: scroll;
   height: 60rem;
-  width: inherit;
+  width: 140rem;
   display: flex;
+  float: left;
 }
 
 .criminalCard::-webkit-scrollbar{
@@ -419,7 +419,51 @@ html{
   width: 100%;
 }
 
+.jail{
+  font-family: 'Unbounded', cursive;
+  background-image: url('https://i.pinimg.com/originals/c6/db/66/c6db6625162239e4f897280d893c8634.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  color: white;
+  height: 7rem;
+  width: 15rem;
+  margin-top: 3rem;
+  margin-left: 6rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
 
+.jailBackground{
+  background-image: url('https://wallpapercave.com/wp/wp4586991.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  border: 5px solid;
+  overflow: scroll;
+  height: 60rem;
+  width: 140rem;
+  display: flex;
+  float: left;
+  margin-left: 7rem;
+}
+
+.folder{
+  background-image: url('https://openclipart.org/image/2400px/svg_to_png/271918/blankYellowFolder.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  margin-top: 2rem;
+  height: 55rem;
+  width: 70rem;
+}
+
+.leftFolder{
+  
+}
 /* ================================================================================================================================ */
 .welcomePageBackground2{
   overflow: hidden;
@@ -700,7 +744,7 @@ html{
 .updateButton2{
   height: 7rem;
   width: 8rem;
-  margin-left: 9rem;
+  margin-left: 4rem;
   background-color: transparent;
   border: 0;
   font-size: 1.5rem;
@@ -712,6 +756,21 @@ html{
   background-size: cover;
 }
 
+.jail2{
+  font-family: 'Unbounded', cursive;
+  background-image: url('https://i.pinimg.com/originals/c6/db/66/c6db6625162239e4f897280d893c8634.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  color: white;
+  height: 7rem;
+  width: 15rem;
+  margin-top: 3rem;
+  margin-left: 1rem;
+  font-size: 2rem;
+  border-radius: 1rem;
+}
 /* ================================================================================================================================ */
 .welcomePageBackground3{
   overflow: hidden;
@@ -992,7 +1051,7 @@ html{
 .updateButton3{
   height: 7rem;
   width: 8rem;
-  margin-left: 5rem;
+  /* margin-left: 5rem; */
   background-color: transparent;
   border: 0;
   font-size: 1.5rem;
@@ -1002,4 +1061,20 @@ html{
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-size: cover;
+}
+
+.jail3{
+  font-family: 'Unbounded', cursive;
+  background-image: url('https://i.pinimg.com/originals/c6/db/66/c6db6625162239e4f897280d893c8634.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: cover;
+  color: white;
+  height: 3rem;
+  width: 5rem;
+  margin-top: 2rem;
+  /* margin-left: 6rem; */
+  font-size: 1rem;
+  border-radius: 1rem;
 }

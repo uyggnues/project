@@ -16,10 +16,12 @@ function useWindowSize () {
 
 const Criminals = () => {
     const [criminals, setCriminals] = useState([])
-    const[height, width] = useWindowSize();
+    const [height, width] = useWindowSize();
     const params = useParams()
     const navigate = useNavigate()
     const cityId = parseInt(params.city_id)
+
+    // console.log(criminals)
     
     useEffect(() => {
         fetch(`http://localhost:4000/cities/${cityId}/criminals`)
@@ -28,7 +30,7 @@ const Criminals = () => {
     }, [cityId]);
 
     const mappedCriminals = criminals.map(criminal => {
-        return <Criminal key={criminal.id} criminal={criminal} width={width}/>
+        return <Criminal key={criminal.id} criminal={criminal} width={width} setCriminals={setCriminals}/>
     })
 
     return (
@@ -37,6 +39,7 @@ const Criminals = () => {
                 <div className='padding'>
                     <div className='signButton'>
                         <button className='toCities' onClick={() => navigate('/')}>Back to Cities</button>
+                        <button className='jail' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton'>
                             <button className='catch'>CATCH!</button>
                         </div>
@@ -57,6 +60,7 @@ const Criminals = () => {
                 <div className='padding2'>
                     <div className='signButton2'>
                         <button className='toCities2' onClick={() => navigate('/')}>Back to Cities</button>
+                        <button className='jail' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton2'>
                             <button className='catch2'>CATCH!</button>
                         </div>
@@ -77,6 +81,7 @@ const Criminals = () => {
                 <div className='padding3'>
                     <div className='signButton3'>
                         <button className='toCities3' onClick={() => navigate('/')}>Back to Cities</button>
+                        <button className='jail' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton3'>
                             <button className='catch3'>CATCH!</button>
                         </div>

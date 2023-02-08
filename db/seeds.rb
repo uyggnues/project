@@ -13,13 +13,13 @@ puts 'seeding cities'
 end
 
 puts 'seeding civilians'
-100.times do
+1000.times do
     c = City.all.sample
     Civilian.create(name: Faker::Name.name, age: Faker::Number.between(from: 15, to: 65), address: Faker::Address.street_address, birthday: Faker::Date.birthday, height: Faker::Number.between(from: 5.0, to: 7.0), weight: Faker::Number.between(from: 100, to: 250), image: Faker::LoremFlickr.image, city: c )
 end
 
 puts 'seeding criminals'
-30.times do
+250.times do
     c = City.all.sample
     Criminal.create(name: Faker::Name.name, age: Faker::Number.between(from: 15, to: 65), address: Faker::Address.street_address, birthday: Faker::Date.birthday, height: Faker::Number.between(from: 5.0, to: 7.0), weight: Faker::Number.between(from: 100, to: 250), image: Faker::LoremFlickr.image, sentenced: Faker::Number.between(from: 1, to: 100), in_jail: Faker::Boolean.boolean, city: c )
 end

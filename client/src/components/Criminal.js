@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 
     
-const Criminal = ({criminal, width}) => {
+const Criminal = ({criminal, width, setCriminals}) => {
     const params = useParams()
     const cityId = parseInt(params.city_id)
     const navigate = useNavigate()
@@ -11,15 +11,14 @@ const Criminal = ({criminal, width}) => {
     // console.log(width)
 
     const deleteCriminal = () => {
-        fetch(`http://localhost:3000/cities/${cityId}/criminals`, {
-            method: 'DELETE'
+        fetch(`http://localhost:4000/criminals/${criminal.id}`, {
+            method: 'DELETE',
         })
-        .then(res => res.json())
-        // .then(criminal =>             
-        //     setCriminals(current => {
-        //     const criminalId = current.findIndex(ele => ele.id === criminal.id)
-        //     return [...current.slice(0, criminalId), ...current.slice(criminalId + 1)]
-        // }))
+        .then(resp =>             
+            setCriminals(current => {
+            const updated_criminals = current.filter(ele => ele.id !== criminal.id)
+            return updated_criminals
+        }))
     }
 
     return (
@@ -28,7 +27,7 @@ const Criminal = ({criminal, width}) => {
                 {width > 1500 && !criminal.in_jail ?
                     <div className='wantedPoster'>
                         <div>
-                            <button className='updateButton' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal`)}>Update Info</button>
+                            <button className='updateButton' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal/${criminal.id}`, {state: {criminal: criminal}})}>Update Info</button>
                             <button className='deleteButton' onClick={deleteCriminal}>Delete</button>
                             <div className='card'>
                                 <div className='front'>
@@ -52,7 +51,7 @@ const Criminal = ({criminal, width}) => {
                         {width >= 800 && !criminal.in_jail ?
                         <div className='wantedPoster2'>
                             <div>
-                                <button className='updateButton2' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal`)}>Update Info</button>
+                                <button className='updateButton2' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal/${criminal.id}`, {state: {criminal: criminal}})}>Update Info</button>
                                 <button className='deleteButton' onClick={deleteCriminal}>Delete</button>
                                 <div className='card2'>
                                     <div className='front2'>
@@ -76,7 +75,7 @@ const Criminal = ({criminal, width}) => {
                         {width < 800 && !criminal.in_jail ?
                         <div className='wantedPoster3'>
                             <div>
-                                <button className='updateButton3' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal`)}>Update Info</button>
+                                <button className='updateButton3' onClick={() => navigate(`/cities/${cityId}/UpdateCriminal/${criminal.id}`, {state: {criminal: criminal}})}>Update Info</button>
                                 <button className='deleteButton' onClick={deleteCriminal}>Delete</button>
                                 <div className='card3'>
                                     <div className='front3'>

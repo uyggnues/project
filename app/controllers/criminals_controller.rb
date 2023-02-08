@@ -18,17 +18,13 @@ class CriminalsController < ApplicationController
   end
 
   # PATCH/PUT /cities/1
-  def update_criminal
-    criminal = Criminal.find(params[:id])
-    debugger
-    updated_city = Criminal.update!(criminal_params)
-    render json: city, status: :accepted
+  def update
+    updated_criminal = @criminal.update!(criminal_params)
+    render json: updated_criminal, status: :accepted
   end
 
-  def delete_criminal
-    criminal = Criminal.find(params[:id])
-    debugger
-    criminal.destroy
+  def destroy
+    @criminal.destroy
     head :no_content
   end
 

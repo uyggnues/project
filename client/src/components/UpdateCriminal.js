@@ -1,45 +1,49 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate} from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate, useLocation} from 'react-router-dom'
 import validator from 'validator'
 
 const UpdateCriminal = ({cities, setCities}) => {
     const params = useParams()
     const navigate = useNavigate()
+    const location = useLocation()
     const cityId = parseInt(params.city_id)
+    const criminalId = parseInt(params.criminal_id)
+    const criminal = location.state.criminal
     const [UpdateCriminal, setUpdateCriminal] = useState({
-        name: "",
-        age: 0,
-        address: "",
-        birthday: "",
-        height: "",
-        weight: 0,
-        image: "",
-        sentenced: 0,
-        in_jail: false,
+        name: criminal.name,
+        age: criminal.age,
+        address: criminal.address,
+        birthday: criminal.birthday,
+        height: criminal.height,
+        weight: criminal.weight,
+        image: criminal.image,
+        sentenced: criminal.sentenced,
+        in_jail: criminal.in_jail,
         city: cityId
     })
 // debugger
+    // console.log(criminal)
     const handleChange = (e) => {
         setUpdateCriminal({...UpdateCriminal, [e.target.name]:e.target.value})
     }
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        console.log('clicked')
-        fetch(`http://localhost:4000/cities/${cityId}/criminals`, {
-            method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(UpdateCriminal)
+        // console.log('clicked')
+        // const copyCriminal = {...UpdateCriminal}
+        // delete copyCriminal.city
+        fetch(`http://localhost:4000/criminals/${criminalId}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(UpdateCriminal)
         })
-        .then(res => res.json())
-        .then(data => {
-            setCities(current => {
-                
-            })
+        .then(resp => {
+            if (resp.ok) {
+                navigate(`/cities/${cityId}/criminals`)
+            }
         })
-        navigate(`/cities/${cityId}/criminals`)
     }
 
     return (
@@ -60,7 +64,7 @@ const UpdateCriminal = ({cities, setCities}) => {
                     name="age"
                     min="10"
                     max="80"
-                    value={UpdateCriminal.price}
+                    value={UpdateCriminal.age}
                     onChange={handleChange}
                 />
                 <br/>

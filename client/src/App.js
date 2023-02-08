@@ -4,11 +4,11 @@ import React, { useState, useEffect } from 'react'
 import Cities from './components/Cities'
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Error from './components/Error';
 import Criminals from './components/Criminals';
 import Welcome from './components/Welcome'
 import NewCriminal from './components/NewCriminal';
 import UpdateCriminal from './components/UpdateCriminal';
+import Jail from './components/Jail';
 
 function useWindowSize () {
   const [size, setSize] = useState([window.innerHeight, window.innerWidth])
@@ -39,14 +39,15 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path='/cities/:city_id/UpdateCriminal' element={<UpdateCriminal cities={cities} setCities={setCities} />} />
+        <Route path='/cities/:city_id/UpdateCriminal/:criminal_id' element={<UpdateCriminal cities={cities} setCities={setCities} />} />
         <Route path='/cities/:city_id/NewCriminal' element={<NewCriminal setCities={setCities}/>} />
         <Route path='/cities/:city_id/criminals' element={<Criminals/>} />
+        <Route path='/cities/:city_id/jail' element={<Jail />} />
         <Route path='/Welcome' element={<Welcome setWelcome={setWelcome} width={width}/>} />
         <Route path='/Signup' element={<Signup />} />
         <Route path='/Login' element={<Login />} />
-        <Route path='/' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome}/>} />
-        <Route path='*' element={<Error />} />
+        <Route exact path='/' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome}/>} />
+        <Route path='*' element={<Welcome />} />
       </Routes>
      
     </div>

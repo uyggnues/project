@@ -42,7 +42,6 @@ const NewCriminal = ({setCities}) => {
               res.json().then()
               navigate(`/cities/${cityId}/criminals`)
             } else {
-              //Display errors
               res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
             }
           })
