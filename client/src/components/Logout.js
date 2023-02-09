@@ -9,10 +9,11 @@ function Logout({setUser}){
       method: 'DELETE',
     })
     .then(res => {
-      // console.log(res)
-      setUser(null)
-      window.localStorage.setItem("user", JSON.stringify(null))
-      navigate('/Login')
+        if (res.ok) {
+            setUser(null)
+            navigate('/Login')
+        }
+    //   window.localStorage.setItem("user", JSON.stringify(null))
     })
   }, []);
 

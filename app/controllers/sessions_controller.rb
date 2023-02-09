@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    skip_before_action :authorized_user, only: [:login]
+
     def login
         user = Player.find_by(username: params[:username])
         if user&.authenticate(params[:password])
@@ -12,8 +14,8 @@ class SessionsController < ApplicationController
     end
 
     def logout
-        delete session[:player_id]
-        render json: {message: "Successfully logged out"}, status:ok
+        session.delete :player_id
+        render json: {message: "Successfully logged out"}, status: :ok
     end
 
     def me

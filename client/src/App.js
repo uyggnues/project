@@ -25,14 +25,39 @@ function useWindowSize () {
 }
 
 
+
 function App() {
   const [welcome, setWelcome] = useState(true)
   const [cities, setCities] = useState([])
   const [height, width] = useWindowSize();
-  
   const [user, setUser] = useState(null)
-  const [message, setMessage] = useState(null)
-  const [toggleAuth, setToggleAuth] = useState(false)
+  const [errors, setErrors] = useState(null)
+
+  useEffect(() => {
+    fetch("/authorized_user")
+    .then((res) => {
+      if (res.ok) {
+        res.json()
+        .then((user) => {
+          setUser(user);
+          fetchProductions()
+        });
+      } else {
+        setUser(null)
+      }
+    })
+  },[])
+
+  const fetchProductions = () => {
+    fetch('/productions')
+    .then(res => {
+      if(res.ok){
+        res.json().then(setCities)
+      }else {
+        res.json().then(data => setErrors(data.error))
+      }
+    })
+  }
   
   useEffect(() => {
     fetch("http://localhost:4000/cities")
@@ -40,10 +65,18 @@ function App() {
     .then(data => setCities(data))//setPost(data))
   }, []);
 
+  if(errors) return <h1>{errors}</h1>
+  if(!user) return (
+    <>
+      <Login />
+      <Signup />
+    </>
+  )
+
+  const updateUser = (user) => setUser(user)
 
   return (
     <div>
-      {/* {user ? */}
         <Routes>
           <Route path='/cities/:city_id/UpdateCriminal/:criminal_id' element={<UpdateCriminal cities={cities} setCities={setCities} />} />
           <Route path='/cities/:city_id/NewCriminal' element={<NewCriminal setCities={setCities}/>} />
@@ -53,15 +86,10 @@ function App() {
           <Route path='/Welcome' element={<Welcome setWelcome={setWelcome} width={width}/>} />
           <Route exact path='/' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome}/>} />
           <Route path='*' element={<Welcome />} />
-          <Route path='/Logout' element={<Logout setUser={setUser} setMessage={setMessage} setToggleAuth={setToggleAuth}/>} />
-        </Routes>
-      {/* : */}
-        <Routes>
+          <Route path='/Logout' element={<Logout setUser={setUser}/>} />
           <Route path='/Signup' element={<Signup />} />
-          <Route path='/Login' element={<Login setUser={setUser} setMessage={setMessage} setToggleAuth={setToggleAuth}/>} />
+          <Route path='/Login' element={<Login setUser={setUser} updateUser={updateUser}/>} />
         </Routes>
-      {/* } */}
-     
     </div>
   );
 }

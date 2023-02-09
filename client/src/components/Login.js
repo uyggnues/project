@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-const Login = ({setUser, setMessage, setToggleAuth}) => {
+const Login = ({setUser, setMessage, updateUser}) => {
     const [user, setUserObj] = useState({
         username: '',
         password: '',
@@ -24,6 +24,7 @@ const Login = ({setUser, setMessage, setToggleAuth}) => {
         .then(resp => {
             if (resp.status === 200) {
                 resp.json().then(userObj => setUser(userObj.user))
+                updateUser(user)
             } else {
                 resp.json().then(messageObj => alert(messageObj.error))
             }

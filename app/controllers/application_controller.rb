@@ -3,12 +3,16 @@ class ApplicationController < ActionController::API
     rescue_from ActiveRecord::RecordInvalid, with: :invalid_error
     rescue_from ActiveRecord::RecordNotFound, with: :not_found_error
 
-    # configure do 
-    #     set :public_folder, 'public'
-    #     set :default_content_type, :json
-    #     enable :sessions
-    #     set :session_secret. ENV["SESSION_SECRET"]
-    # end
+    before_action :authorized_user
+
+    def current_user
+        user = Player.find_by(id: session[:player_id])
+        user
+    end
+
+    def authorized_user
+        render json: {errors: 'Not authorized'}, status: :unauthorized unless current_user 
+    end
     
 
     private

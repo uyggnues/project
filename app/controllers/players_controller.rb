@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: %i[ show update destroy ]
+  skip_before_action :authorized_user, only: [:create]
 
   # GET /players
   def index
@@ -9,7 +10,8 @@ class PlayersController < ApplicationController
 
   # GET /cities/1
   def show
-    player = Player.find(params[:id])
+    
+    player = current_user
     render json: player, status: :ok
   end
 

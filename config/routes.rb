@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   delete '/logout', to:'sessions#logout'
   post '/signup', to:'players#signup'
   get '/me', to: 'sessions#me'
+  get '/authorized_user', to: 'players#show'
   
   # namespace :api do
   #   namespace :v1 do
