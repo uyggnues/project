@@ -1,29 +1,44 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-const Login = () => {
-    const [login, setLogin] = useState({
+const Login = ({setUser, setMessage, setToggleAuth}) => {
+    const [user, setUserObj] = useState({
         username: '',
         password: '',
     })
 
     const handleChange = (e) => {
-        setLogin({...login, [e.target.name]:e.target.value})
+        setUserObj({...user, [e.target.name]:e.target.value})
     }
 
     const handleSubmit = (e) => {
-        e.prevent.default()
+        e.preventDefault()
 
+        fetch('http://localhost:4000/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user)
+        })
+        .then(resp => {
+            if (resp.status === 200) {
+                resp.json().then(userObj => setUser(userObj.user))
+            } else {
+                resp.json().then(messageObj => alert(messageObj.error))
+            }
+        })
+        .catch(err => alert(err))
     }
     return (
         <div className='badge'>
             <div className='formDiv'>
                 <form className='login' onSubmit={handleSubmit}>
                     <label className='loginLabel'>Username:</label>
-                    <input className='loginText' type="text" name="username" value={login.username} onChange={handleChange} placeholder='username'/>
+                    <input className='loginText' type="text" name="username" value={user.username} onChange={handleChange} placeholder='username'/>
                     <br/>
                     <label className='loginLabel'>Password:</label>
-                    <input className='loginText' type="text" name="password" value={login.password} onChange={handleChange} placeholder='password'/>
+                    <input className='loginText' type="password" name="password" value={user.password} onChange={handleChange} placeholder='password'/>
                     <br/>
                     <button className='loginButton' type='submit'>Login</button>
                 </form>

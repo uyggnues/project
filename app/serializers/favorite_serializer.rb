@@ -1,4 +1,6 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  belongs_to :player
-  belongs_to :criminal
+
+
+  # belongs_to :player
+  # belongs_to :criminal
 end

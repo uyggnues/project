@@ -5,7 +5,7 @@ class CreatePlayers < ActiveRecord::Migration[7.0]
       t.string :last_name
       t.string :username
       t.string :email
-      t.string :password
+      t.string :password_digest
       t.string :roles
 
       t.timestamps

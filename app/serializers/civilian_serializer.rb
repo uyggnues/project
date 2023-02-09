@@ -1,5 +1,4 @@
 class CivilianSerializer < ActiveModel::Serializer
-  attributes :id, :name, :age, :address, :birthday, :height, :weight, :image
+  attributes :id, :name, :age, :address, :birthday, :height, :weight, :image, :city_id
 
-  belongs_to :city
 end

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Civilian = ({m}) => {
+const GameCriminal = ({m}) => {
 
     const civilianHeight = Math.round(m.height * 10)/10
     return (
@@ -21,4 +21,4 @@ const Civilian = ({m}) => {
     );
 }
 
-export default Civilian;
+export default GameCriminal;

@@ -8,6 +8,7 @@ const Signup = () => {
         email: '',
         username: '',
         password: '',
+        confirmPassword:""
     })
 
     const handleChange = (e) => {
@@ -15,7 +16,7 @@ const Signup = () => {
     }
 
     const handleSubmit = (e) => {
-        e.prevent.default()
+        e.preventDefault()
 
     }
     return (
@@ -23,19 +24,22 @@ const Signup = () => {
             <div className='formDiv'>
                 <form className='signup' onSubmit={handleSubmit}>
                     <label className='loginLabel'>First_name:</label>
-                    <input className='loginText' type="text" name="first_name" value={signup.first_name} onChange={handleChange} placeholder='first_name'/>
+                    <input className='signupText' type="text" name="first_name" value={signup.first_name} onChange={handleChange} placeholder='first_name'/>
                     <br/>
                     <label className='loginLabel'>Last_name:</label>
-                    <input className='loginText' type="text" name="last_name" value={signup.last_name} onChange={handleChange} placeholder='last_name'/>
+                    <input className='signupText' type="text" name="last_name" value={signup.last_name} onChange={handleChange} placeholder='last_name'/>
                     <br/>
                     <label className='loginLabel'>Email:</label>
-                    <input className='loginText' type="text" name="email" value={signup.email} onChange={handleChange} placeholder='email'/>
+                    <input className='signupText' type="text" name="email" value={signup.email} onChange={handleChange} placeholder='email'/>
                     <br/>
                     <label className='loginLabel'>Username:</label>
-                    <input className='loginText' type="text" name="username" value={signup.username} onChange={handleChange} placeholder='username'/>
+                    <input className='signupText' type="text" name="username" value={signup.username} onChange={handleChange} placeholder='username'/>
                     <br/>
                     <label className='loginLabel'>Password:</label>
-                    <input className='loginText' type="text" name="password" value={signup.password} onChange={handleChange} placeholder='password'/>
+                    <input className='signupText' type="password" name="password" value={signup.password} onChange={handleChange} placeholder='password'/>
+                    <br/>
+                    <label className='loginLabel'>Password Confirmation:</label>
+                    <input className='signupText' type="password" name="confirmPassword" value={signup.confirmPassword} onChange={handleChange} placeholder='confirm password'/>
                     <br/>
                     <button className='loginButton' type='submit'>Signup</button>
                 </form>

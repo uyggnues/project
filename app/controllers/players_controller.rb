@@ -9,7 +9,7 @@ class PlayersController < ApplicationController
 
   # GET /cities/1
   def show
-    player = Player.find(params[:player_id])
+    player = Player.find(params[:id])
     render json: player, status: :ok
   end
 
@@ -32,6 +32,16 @@ class PlayersController < ApplicationController
     head :no_content
   end
 
+  def signup
+    user = Player.create(player_params)
+    if user.id
+      session
+      render json: user, status: :created
+    else
+      render json: {message: user.errors.full_messages.to_sentence}, status: :unprocessable_entity
+    end
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -41,6 +51,6 @@ class PlayersController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def player_params
-      params.require(:player).permit(:first_name, :last_name, :username, :email, :password, :roles)
+      params.permit(:first_name, :last_name, :username, :email, :password, :roles)
     end
 end

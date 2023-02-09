@@ -25,6 +25,12 @@ class CitiesController < ApplicationController
     render json: new_city, status: :created
   end
 
+  def civilians
+    city = City.find(params[:city_id])
+    criminals = city.criminals.filter{ |c| !c.in_jail}
+    render json: {civilians: city.civilians, criminals: criminals}, status: :ok
+  end
+
 
 private
     # Use callbacks to share common setup or constraints between actions.

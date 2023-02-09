@@ -6,7 +6,16 @@ Rails.application.routes.draw do
   resources :civilians
   
   get '/cities/:city_id/criminals', to:'cities#criminals'
+  get '/cities/:city_id/civilians', to:'cities#civilians'
   post '/cities/:city_id/criminals', to:'cities#new_criminals'
-  # patch '/criminals/:criminal_id', to:'criminals#update_criminal'
-  # delete '/criminals/:criminal_id', to:'criminals#delete_criminal'
+  post '/login', to:'sessions#login'
+  delete '/logout', to:'sessions#logout'
+  post '/signup', to:'players#signup'
+  get '/me', to: 'sessions#me'
+  
+  # namespace :api do
+  #   namespace :v1 do
+
+  #   end
+  # end
 end
