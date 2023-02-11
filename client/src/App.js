@@ -39,25 +39,14 @@ function App() {
       if (res.ok) {
         res.json()
         .then((user) => {
+          // debugger
           setUser(user);
-          fetchProductions()
         });
       } else {
         setUser(null)
       }
     })
   },[])
-
-  const fetchProductions = () => {
-    fetch('/productions')
-    .then(res => {
-      if(res.ok){
-        res.json().then(setCities)
-      }else {
-        res.json().then(data => setErrors(data.error))
-      }
-    })
-  }
   
   useEffect(() => {
     fetch("http://localhost:4000/cities")
@@ -65,15 +54,20 @@ function App() {
     .then(data => setCities(data))//setPost(data))
   }, []);
 
+  const [seeLogin, setSeeLogin ] = useState()
+  const updateUser = (user) => setUser(user)
+
   if(errors) return <h1>{errors}</h1>
   if(!user) return (
     <>
-      <Login />
-      <Signup />
+    {seeLogin ?
+      <Login setSeeLogin={setSeeLogin} updateUser={updateUser} setUser={setUser}/>
+      :
+      <Signup setSeeLogin={setSeeLogin} updateUser={updateUser} setUser={setUser}/>
+    }
     </>
   )
 
-  const updateUser = (user) => setUser(user)
 
   return (
     <div>
@@ -87,8 +81,8 @@ function App() {
           <Route exact path='/' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome}/>} />
           <Route path='*' element={<Welcome />} />
           <Route path='/Logout' element={<Logout setUser={setUser}/>} />
-          <Route path='/Signup' element={<Signup />} />
-          <Route path='/Login' element={<Login setUser={setUser} updateUser={updateUser}/>} />
+          {/* <Route path='/Signup' element={<Signup />} />
+          <Route path='/Login' element={<Login setUser={setUser} updateUser={updateUser}/>} /> */}
         </Routes>
     </div>
   );

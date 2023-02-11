@@ -1,5 +1,5 @@
 class PlayersController < ApplicationController
-  before_action :set_player, only: %i[ show update destroy ]
+  before_action :set_player, only: %i[ update destroy ]
   skip_before_action :authorized_user, only: [:create]
 
   # GET /players
@@ -10,9 +10,7 @@ class PlayersController < ApplicationController
 
   # GET /cities/1
   def show
-    
-    player = current_user
-    render json: player, status: :ok
+    render json: @user, status: :ok
   end
 
   # POST /cities
@@ -37,7 +35,7 @@ class PlayersController < ApplicationController
   def signup
     user = Player.create(player_params)
     if user.id
-      session
+      session[:user_id] = user.id
       render json: user, status: :created
     else
       render json: {message: user.errors.full_messages.to_sentence}, status: :unprocessable_entity

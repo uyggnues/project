@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[ show update destroy ]
+  # skip_before_action :authorized_user, only: [:login]
 
   # GET /cities
   def index

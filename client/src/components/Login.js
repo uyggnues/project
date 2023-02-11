@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
-const Login = ({setUser, setMessage, updateUser}) => {
+const Login = ({setUser, setMessage, updateUser, setSeeLogin}) => {
+    const navigate = useNavigate()
     const [user, setUserObj] = useState({
         username: '',
         password: '',
@@ -23,8 +24,10 @@ const Login = ({setUser, setMessage, updateUser}) => {
         })
         .then(resp => {
             if (resp.status === 200) {
-                resp.json().then(userObj => setUser(userObj.user))
-                updateUser(user)
+                resp.json().then(userObj => { 
+                    setUser(userObj)
+                    navigate('/Welcome')
+            })
             } else {
                 resp.json().then(messageObj => alert(messageObj.error))
             }
@@ -44,7 +47,7 @@ const Login = ({setUser, setMessage, updateUser}) => {
                     <button className='loginButton' type='submit'>Login</button>
                 </form>
             </div>
-            <p className='link'>Don't have an account? Signup <Link to='/Signup'>Here</Link></p>
+            <p className='link'>Don't have an account? Signup <button onClick={() => setSeeLogin(current => !current)}>Here</button></p>
         </div>
     );
 }

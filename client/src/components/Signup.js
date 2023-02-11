@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom'
 
-const Signup = () => {
+const Signup = ({setSeeLogin}) => {
     const [signup, setSignup] = useState({
         first_name: '',
         last_name: '',
@@ -44,7 +44,7 @@ const Signup = () => {
                     <button className='loginButton' type='submit'>Signup</button>
                 </form>
             </div>
-            <p className='link'>Have an account? Login in <Link to='/Login'>Here</Link></p>
+            <p className='link'>Already have an account? Login <button onClick={() => setSeeLogin(current => !current)}>Here</button></p>
         </div>
     );
 }

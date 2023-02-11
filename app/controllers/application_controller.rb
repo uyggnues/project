@@ -6,11 +6,12 @@ class ApplicationController < ActionController::API
     before_action :authorized_user
 
     def current_user
-        user = Player.find_by(id: session[:player_id])
-        user
+        # debugger
+        @user ||= Player.find_by(id: session[:user_id])
     end
 
     def authorized_user
+        # debugger
         render json: {errors: 'Not authorized'}, status: :unauthorized unless current_user 
     end
     

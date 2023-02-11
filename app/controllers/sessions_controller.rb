@@ -14,12 +14,12 @@ class SessionsController < ApplicationController
     end
 
     def logout
-        session.delete :player_id
+        session.delete :user_id
         render json: {message: "Successfully logged out"}, status: :ok
     end
 
     def me
-        current_user = Player.find_by_id(session[:player_id]) if session[:player_id]
+        current_user = Player.find_by_id(session[:user_id]) if session[:user_id]
         if current_user 
             render json: current_user, status: :ok
         else
