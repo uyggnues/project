@@ -3,6 +3,10 @@ import React from 'react';
 const Civilian = ({m}) => {
 
     const civilianHeight = Math.round(m.height * 10)/10
+
+    const handleClick = () => {
+        alert('WRONG')
+    }
     return (
         <div className='comp'>
             <div className='left'>
@@ -15,7 +19,7 @@ const Civilian = ({m}) => {
                 <div className='text'>Birthday: {m.birthday}</div>
                 <div className='text'>Height: {civilianHeight} ft</div>
                 <div className='text'>Weight: {m.weight} Ib</div>
-                <button className='gameCatch'>CATCH!</button>
+                <button className='gameCatch' onClick={() => handleClick()}>CATCH!</button>
             </div>
         </div>
     );

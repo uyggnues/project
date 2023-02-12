@@ -148,6 +148,7 @@ html{
   margin-left: 50%;
   left: -15rem;
   top: -6rem;
+  display: flex
 }
 
 .criminalCard{
@@ -626,6 +627,7 @@ html{
   margin-top: 5rem;
   background-color: grey;
   display: flex;
+  font-family: 'Unbounded', cursive;
 }
 
 .comp{
@@ -669,6 +671,51 @@ html{
   margin-left: 8rem;
   margin-top: 3rem;
 }
+
+.logout{
+  background-image: url('https://vectorified.com/images/rectangle-button-icon-4.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-size: contain;
+  background-color: transparent;
+  border: 0;
+  height: 10rem;
+  width: 20rem;
+  font-size: 3rem;
+  font-family: 'Unbounded', cursive;
+  margin-top: 13rem;
+  margin-left: 6rem;
+}
+
+.infoBar{
+  display: flex;
+}
+
+.bar {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  background-color: rgba(209, 209, 209, 0.501);
+}
+
+.gameBarImage{
+  height: 13rem;
+  border: 1rem solid rgb(101, 101, 101);
+  margin-left: 2rem;
+}
+
+.barRight{
+  display: flex;
+  font-size: 2.5rem;
+  flex-wrap: wrap;
+  font-family: 'Unbounded', cursive;
+}
+
+.barText{
+  padding: 1rem;
+}
+
 /* ================================================================================================================================ */
 .welcomePageBackground2{
   overflow: hidden;
@@ -1042,8 +1089,8 @@ html{
   width: 20rem;
   font-family: 'Unbounded', cursive;
   font-size: 2.5rem;
-  margin-top: 50%;
-  margin-left: 25%;
+  margin-top: 13rem;
+  margin-left: -8rem;
 }
 
 .title3{

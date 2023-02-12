@@ -1,8 +1,23 @@
 import React from 'react';
 
-const GameCriminal = ({m}) => {
+const GameCriminal = ({m, cityId, setCivilians}) => {
 
     const civilianHeight = Math.round(m.height * 10)/10
+
+    const handleClick = () => {
+        fetch(`http://localhost:4000/cities/${cityId}/civilians`, {
+            method: 'DELETE',
+        })
+        .then(res => res.json())
+        .then(post =>             
+            setCivilians(current => {
+                const civId = current.findIndex(ele => ele.id === post.id)
+                return [...current.slice(0, civId), ...current.slice(civId + 1)]
+            },
+            alert('CORRECT')
+        ))
+    }
+
     return (
         <div className='comp'>
             <div className='left'>
@@ -15,7 +30,7 @@ const GameCriminal = ({m}) => {
                 <div className='text'>Birthday: {m.birthday}</div>
                 <div className='text'>Height: {civilianHeight} ft</div>
                 <div className='text'>Weight: {m.weight} Ib</div>
-                <button className='gameCatch'>CATCH!</button>
+                <button className='gameCatch' onClick={() => handleClick()}>CATCH!</button>
             </div>
         </div>
     );
