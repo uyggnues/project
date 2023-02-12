@@ -41,7 +41,7 @@ const Criminals = () => {
                         <button className='toCities' onClick={() => navigate('/')}>Back to Cities</button>
                         <button className='jail' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton'>
-                            <button className='catch' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals}})}>CATCH!</button>
+                            <button className='catch' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals, cityId: cityId}})}>CATCH!</button>
                         </div>
                         <button onClick={() => navigate(`/cities/${cityId}/NewCriminal`)} className='addButton' >Add a Criminal</button>
                     </div>
@@ -62,7 +62,7 @@ const Criminals = () => {
                         <button className='toCities2' onClick={() => navigate('/')}>Back to Cities</button>
                         <button className='jail2' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton2'>
-                            <button className='catch2' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals}})}>CATCH!</button>
+                            <button className='catch2' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals, cityId: cityId}})}>CATCH!</button>
                         </div>
                         <button onClick={() => navigate(`/cities/${cityId}/NewCriminal`)} className='addButton2' >Add a Criminal</button>
                     </div>
@@ -83,7 +83,7 @@ const Criminals = () => {
                         <button className='toCities3' onClick={() => navigate('/')}>Back to Cities</button>
                         <button className='jail3' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton3'>
-                            <button className='catch3' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals}})}>CATCH!</button>
+                            <button className='catch3' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals, cityId: cityId}})}>CATCH!</button>
                         </div>
                         <button onClick={() => navigate(`/cities/${cityId}/NewCriminal`)} className='addButton3' >Add a Criminal</button>
                     </div>

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Civilian from './Civilian';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import GameCriminal from './GameCriminal';
 import GameTopCriminal from './GameTopCriminal';
 
 const Game = () => {
+    const navigate = useNavigate()
     const [civilians, setCivilians] = useState([])
     const [criminals, setCriminals] = useState([])
     const [index, setIndex] = useState(0)
@@ -65,10 +66,13 @@ const Game = () => {
                 {displayUno}
                 <button className='barNext' onClick={() => barNext()} >{'>'}</button>
             </div>
-            <div className='computer'>
-                <button className='previous' onClick={() => displayPrevious()} >{'<'}</button>
-                {displayOne}
-                <button className='next' onClick={() => displayNext()} >{'>'}</button>
+            <div className='boot'>
+                <button className='backButton' onClick={() => navigate(`/cities/${cityId}/criminals`)} >BACK</button>
+                <div className='computer'>
+                    <button className='previous' onClick={() => displayPrevious()} >{'<'}</button>
+                    {displayOne}
+                    <button className='next' onClick={() => displayNext()} >{'>'}</button>
+                </div>
             </div>
         </div>
     );

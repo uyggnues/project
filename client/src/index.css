@@ -623,7 +623,7 @@ html{
   width: 60rem;
   border: 3rem solid;
   border-radius: 3rem;
-  margin: auto;
+  margin-left: 9rem;
   margin-top: 5rem;
   background-color: grey;
   display: flex;
@@ -714,6 +714,21 @@ html{
 
 .barText{
   padding: 1rem;
+}
+
+.backButton{
+  font-family: 'Unbounded', cursive;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 5rem;
+  font-size: 3rem;
+  margin-top: 20rem;
+  margin-left: 13rem;
+  background-color: rgb(0, 200, 255);
+}
+
+.boot{
+  display: flex;
 }
 
 /* ================================================================================================================================ */

@@ -62,7 +62,7 @@ function App() {
     {seeLogin ?
       <Login setSeeLogin={setSeeLogin} updateUser={updateUser} setUser={setUser}/>
       :
-      <Signup setSeeLogin={setSeeLogin} updateUser={updateUser} setUser={setUser}/>
+      <Signup setSeeLogin={setSeeLogin} updateUser={updateUser} setUser={setUser} user={user}/>
     }
     </>
   )
