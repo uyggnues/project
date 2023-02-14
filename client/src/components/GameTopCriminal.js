@@ -8,12 +8,12 @@ const GameTopCriminal = ({c}) => {
                 <img className="gameBarImage" src={c.image} alt="post"/>
             </div>
             <div className='barRight'>
-                <div className='barText'>Name: {c.name}</div>
-                <div className='barText'>Age: {c.age} years old</div>
-                <div className='barText'>Address: {c.address}</div>
-                <div className='barText'>Birthday: {c.birthday}</div>
-                <div className='barText'>Height: {civilianHeight} ft</div>
-                <div className='barText'>Weight: {c.weight} Ib</div>
+                <div className='barText'><strong>Name: </strong>{c.name}</div>
+                <div className='barText'><strong>Age: </strong>{c.age} years old</div>
+                <div className='barText'><strong>Address: </strong>{c.address}</div>
+                <div className='barText'><strong>Birthday: </strong>{c.birthday}</div>
+                <div className='barText'><strong>Height: </strong>{civilianHeight} ft</div>
+                <div className='barText'><strong>Weight: </strong>{c.weight} Ib</div>
             </div>
         </div>
     );

@@ -11,7 +11,7 @@ const Welcome = ({setWelcome, width}) => {
                 <div className='welcomePageBackground'>
                     <div className='welcomePage'>
                         <h1 className='header'>
-                            Welcome to Cities Patrol !
+                            Welcome to City Patrol !
                             <button className='X' onClick={() => setWelcome(navigate('/'))}>X</button>
                         </h1>
                         <h2 className='rulesHeader'>

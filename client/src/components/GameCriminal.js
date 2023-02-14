@@ -14,7 +14,7 @@ const GameCriminal = ({m, cityId, setCivilians}) => {
                 const civId = current.findIndex(ele => ele.id === post.id)
                 return [...current.slice(0, civId), ...current.slice(civId + 1)]
             },
-            alert('CORRECT')
+            alert(<h5>CORRECT</h5>)
         ))
     }
 

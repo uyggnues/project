@@ -5,7 +5,7 @@ const Civilian = ({m}) => {
     const civilianHeight = Math.round(m.height * 10)/10
 
     const handleClick = () => {
-        alert('WRONG')
+        alert(<h5>WRONG</h5>)
     }
     return (
         <div className='comp'>

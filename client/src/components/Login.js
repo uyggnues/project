@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const Login = ({setUser, setMessage, updateUser, setSeeLogin}) => {
     const navigate = useNavigate()
@@ -47,7 +47,7 @@ const Login = ({setUser, setMessage, updateUser, setSeeLogin}) => {
                     <button className='loginButton' type='submit'>Login</button>
                 </form>
             </div>
-            <p className='link'>Don't have an account? Signup <button onClick={() => setSeeLogin(current => !current)}>Here</button></p>
+            <p className='link'>Don't have an account? Signup <button onClick={() => setSeeLogin(current => !current)} className='here'>Here</button></p>
         </div>
     );
 }

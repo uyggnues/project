@@ -9,5 +9,5 @@ class Player < ApplicationRecord
     validates :username, presence: true, length: {in: 6..20}, uniqueness: true
     validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: 'Invalid email' }
     validates :password, length: {in: 6..20}
-    validates :roles, presence: true, inclusion: {in: %w(admin player), message: 'Please Select a role'}
+    # validates :roles, presence: true, inclusion: {in: %w(admin player), message: 'Please Select a role'}
 end

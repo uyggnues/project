@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, useNavigate} from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import validator from 'validator'
 
 const NewCriminal = ({setCities}) => {
@@ -38,18 +38,25 @@ const NewCriminal = ({setCities}) => {
             body: JSON.stringify(newCriminal) 
         })
         .then(res => {
-            if(res.ok){
+            if(res.status === 201){
               res.json().then()
-              navigate(`/cities/${cityId}/criminals`)
+                  navigate(`/cities/${cityId}/criminals`)
             } else {
               res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
             }
           })
     }
 
+    const removeError = (event) => {
+        // debugger
+        const error = event.target.parentElement.textContent.slice(0,-1)
+        setErrors(current => current.filter(eString => eString !== error))
+    }
+
     return (
+        <>
+            {errors? errors.map((er, index)=> <div key={index} className='errorNot' >{er}<button onClick={removeError}>X</button></div>):null}
         <div className='formCard'>
-            {errors?errors.map(e => <div>{e}</div>):null}
             <button className='formX' onClick={() => navigate(`/cities/${cityId}/criminals`)}>X</button>
             <div className="newCriminalImage">
                 {validator.isURL(newCriminal.image) ? <img className="displayImage" src={newCriminal.image} alt="Invalid"/> : <p className="imgText">
@@ -114,6 +121,7 @@ const NewCriminal = ({setCities}) => {
                     <button className='submitButton'>Add!</button>
             </form>
         </div>
+    </>
     );
 }
 

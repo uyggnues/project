@@ -174,7 +174,7 @@ html{
   width: 35rem;
   text-align: center;
   display: flex;
-  margin-left: 3rem;
+  /* border: 2px solid; */
 }
 
 
@@ -731,6 +731,20 @@ html{
   display: flex;
 }
 
+.here{
+  background-color: transparent;
+  border: 0;
+  color: blue;
+}
+
+.here:hover{
+  color: rgb(117, 121, 255);
+}
+
+.errorNot{
+  background-color: red;
+  margin-top: 5px;
+}
 /* ================================================================================================================================ */
 .welcomePageBackground2{
   overflow: hidden;

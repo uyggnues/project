@@ -22,7 +22,7 @@ class CitiesController < ApplicationController
   def new_criminals
     city = City.find(params[:city_id])
     # debugger
-    new_city = Criminal.create(criminal_params)
+    new_city = Criminal.create!(criminal_params)
     render json: new_city, status: :created
   end
 

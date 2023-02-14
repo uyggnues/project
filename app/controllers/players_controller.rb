@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   before_action :set_player, only: %i[ update destroy ]
-  skip_before_action :authorized_user, only: [:create]
+  skip_before_action :authorized_user, only: [:signup]
 
   # GET /players
   def index
@@ -14,10 +14,10 @@ class PlayersController < ApplicationController
   end
 
   # POST /cities
-  def create
-    player = Player.create!(player_params)
-    render json: player, status: :created, location: player
-  end
+  # def create
+  #   player = Player.create!(player_params)
+  #   render json: player, status: :created, location: player
+  # end
 
   # PATCH/PUT /cities/1
   def update
@@ -34,11 +34,12 @@ class PlayersController < ApplicationController
 
   def signup
     user = Player.create(player_params)
+    debugger
     if user.id
       session[:user_id] = user.id
       render json: user, status: :created
     else
-      render json: {message: user.errors.full_messages.to_sentence}, status: :unprocessable_entity
+      render json: {message: user.errors.full_messages}, status: :unprocessable_entity
     end
   end
 

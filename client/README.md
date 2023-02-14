@@ -1,70 +1,47 @@
-# Getting Started with Create React App
+# Snap Shot
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+SnapShot is a place where you can create a new SnapShot(post) containing a picture and a caption, and share it to the world! You want to interact with people and their SnapShots(posts)? well you can do that too using our comment features!
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+This is a local hub for posting posts and commenting on either your posts or someone elses post(so what you share won't actually be shared to the world). You can navigate through the page by clicking on ur username on the top right of the page and a Navbar will appear. You can also like and unlike the posts you like or not. 
 
-### `npm start`
+## Set up
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* First Fork and clone repo to local machine.
+* Second you will need to cd into the frontend and run
+```
+npm install 
+```
+* Then run
+```
+npm start
+```
+to start your server
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Usage
 
-### `npm test`
+* When you open the page you will be able to browse through the SnapShot how ever you like but with some restraints.  
+* If you want to access those features you have to login if you have an account or sign up if you don't.
+* As you scroll through the page if you see anything you like don't be afraid to leave and like and a comment by using our buttons. 
+* if you want to create your own post click on ur username on the top right side of the page and click "create SnapShot". There you will need to provide and image URL and a caption(optional) to the create your post.
+* Oh! you made a mistake or want to delete your post? then you can do that in "your Account" section in your Navbar.
+* make sure to press log out when you are satisfied with SnapShot!
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Navigation
+* from title screen click view comics
+* in the main display you will have:
+    * return to title
+    * the sell comic button will open the form to submit your own comics 
+    * cart, which inside you will see a back to comics button which will bring you back to the main page.
 
-### `npm run build`
+## Collaborating
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Pull Requests are welcome on [GitHub](https://github.com/uyggnues/phase-3-project). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/version/1/4/code-of-conduct/) code of conduct.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## License 
+The program is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Walkthrough
+<a href=https://youtu.be/8-kMNw-tcPk><img id="img-with-fallback" class="style-scope ytcp-img-with-fallback" src="https://i9.ytimg.com/vi_webp/8-kMNw-tcPk/mq2.webp?sqp=CJi14Z0G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CIAC0AWKAgwIABABGH8gHSgTMA8=&rs=AOn4CLAU0TLT8KAHRD9w2kpUmGUYm1wSUw"/></a>

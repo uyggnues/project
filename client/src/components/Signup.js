@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 const Signup = ({setSeeLogin, setUser}) => {
@@ -28,13 +28,13 @@ const Signup = ({setSeeLogin, setUser}) => {
             body: JSON.stringify(user)
         })
         .then(resp => {
-            if (resp.status === 200) {
+            if (resp.status === 201) {
                 resp.json().then(userObj => { 
                     setUser(userObj)
                     navigate('/Welcome')
                 })
             } else {
-                resp.json().then(messageObj => alert(messageObj.error))
+                resp.json().then(messageObj => alert(messageObj.message))
             }
         })
         .catch(err => alert(err))
@@ -67,7 +67,7 @@ const Signup = ({setSeeLogin, setUser}) => {
                     <button className='loginButton' type='submit'>Signup</button>
                 </form>
             </div>
-            <p className='link'>Already have an account? Login <button onClick={() => setSeeLogin(current => !current)}>Here</button></p>
+            <p className='link'>Already have an account? Login <button onClick={() => setSeeLogin(current => !current)} className='here'>Here</button></p>
         </div>
     );
 }
