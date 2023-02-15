@@ -14,7 +14,7 @@ function useWindowSize () {
     return size
 }
 
-const Criminals = () => {
+const Criminals = ({user}) => {
     const [criminals, setCriminals] = useState([])
     const [height, width] = useWindowSize();
     const params = useParams()
@@ -30,7 +30,7 @@ const Criminals = () => {
     }, [cityId]);
 
     const mappedCriminals = criminals.map(criminal => {
-        return <Criminal key={criminal.id} criminal={criminal} width={width} setCriminals={setCriminals}/>
+        return <Criminal key={criminal.id} criminal={criminal} width={width} setCriminals={setCriminals} user={user}/>
     })
 
     return (
@@ -38,7 +38,7 @@ const Criminals = () => {
             {width > 1500 ?
                 <div>
                     <div className='signButton'>
-                        <button className='toCities' onClick={() => navigate('/')}>Back to Cities</button>
+                        <button className='toCities' onClick={() => navigate('/cities')}>Back to Cities</button>
                         <button className='jail' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton'>
                             <button className='catch' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals, cityId: cityId}})}>CATCH!</button>
@@ -59,7 +59,7 @@ const Criminals = () => {
             {width >= 800 ?
                 <div>
                     <div className='signButton2'>
-                        <button className='toCities2' onClick={() => navigate('/')}>Back to Cities</button>
+                        <button className='toCities2' onClick={() => navigate('/cities')}>Back to Cities</button>
                         <button className='jail2' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton2'>
                             <button className='catch2' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals, cityId: cityId}})}>CATCH!</button>
@@ -80,7 +80,7 @@ const Criminals = () => {
             {width < 800 ?
                 <div>
                     <div className='signButton3'>
-                        <button className='toCities3' onClick={() => navigate('/')}>Back to Cities</button>
+                        <button className='toCities3' onClick={() => navigate('/cities')}>Back to Cities</button>
                         <button className='jail3' onClick={() => navigate(`/cities/${cityId}/jail`, {state: {criminals: criminals, width: width}})}>Visit Jail</button>
                         <div className='catchButton3'>
                             <button className='catch3' onClick={() => navigate(`/cities/${cityId}/catch`, {state: {criminals: criminals, cityId: cityId}})}>CATCH!</button>

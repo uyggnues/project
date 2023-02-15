@@ -1,43 +1,55 @@
-# Snap Shot
+# City Patrol
 
-SnapShot is a place where you can create a new SnapShot(post) containing a picture and a caption, and share it to the world! You want to interact with people and their SnapShots(posts)? well you can do that too using our comment features!
+City Patrol is a fun small game where you can experience the thrill of catching criminals as well as make, update and favorite them. There are multiple cities for you to catch all the criminals and you can also catch your own criminals!
 
 ## Description
 
-This is a local hub for posting posts and commenting on either your posts or someone elses post(so what you share won't actually be shared to the world). You can navigate through the page by clicking on ur username on the top right of the page and a Navbar will appear. You can also like and unlike the posts you like or not. 
+This is a local hub for creating, updating, deleting, favorite, and catch your very own criminals. but first you have to create an account and login to save your favorite criminals. You can also visit jails to look at the criminals that you caught. 
 
 ## Set up
 
 * First Fork and clone repo to local machine.
-* Second you will need to cd into the frontend and run
+* Second run
 ```
-npm install 
+bundle install
+
+npm install --prefix client
 ```
-* Then run
+there are starter code in the db/seeds.rb so just run 
 ```
-npm start
+rails db:migrate db:seed 
 ```
-to start your server
+after that to start your server run 
+```
+rails s
+
+npm start --prefix client
+```
 
 ## Usage
 
-* When you open the page you will be able to browse through the SnapShot how ever you like but with some restraints.  
-* If you want to access those features you have to login if you have an account or sign up if you don't.
-* As you scroll through the page if you see anything you like don't be afraid to leave and like and a comment by using our buttons. 
-* if you want to create your own post click on ur username on the top right side of the page and click "create SnapShot". There you will need to provide and image URL and a caption(optional) to the create your post.
-* Oh! you made a mistake or want to delete your post? then you can do that in "your Account" section in your Navbar.
-* make sure to press log out when you are satisfied with SnapShot!
+* First make an account if you haven't already then login with the account you just created  
+* then read the instruction written one the welcome page, and when you're ready press the 'X' button
+* Next pice a city of your choosing and click the arrow button that says "Go Here" 
+* then make sure to at least look through all the criminals because the more you remember the better for the game
+* And when you're ready click on the 'CATCH!' button to start playing!
+* There is no time limit so you can take your time and figure out who the criminal is and who isn't
+* To figure out who is the criminal you have to look at the criminals displayed on the top and see if there are any of them are in the computer down below.
+* If your right it will tell your that you are right and if your wrong it will also tell your that you are wrong.
 
 ## Navigation
-* from title screen click view comics
-* in the main display you will have:
-    * return to title
-    * the sell comic button will open the form to submit your own comics 
-    * cart, which inside you will see a back to comics button which will bring you back to the main page.
+* From the welcome page press the 'X' button to see:
+* cities, where you can select which city you want to go to, in the cities you can visit:
+    * Jail to look at all the caught criminals
+    * catch button to go can catch more criminals
+    * back to cities button to go back to cities
+    * add criminals incase you want to make your very own criminals
+* logout button where you can log out
+* how to play button to take you back to the welcome page where you can see how to play the game.
 
 ## Collaborating
 
-Pull Requests are welcome on [GitHub](https://github.com/uyggnues/phase-3-project). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/version/1/4/code-of-conduct/) code of conduct.
+Pull Requests are welcome on [GitHub](https://github.com/uyggnues/project). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/version/1/4/code-of-conduct/) code of conduct.
 
 ## License 
 The program is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT)

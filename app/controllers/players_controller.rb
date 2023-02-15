@@ -34,7 +34,6 @@ class PlayersController < ApplicationController
 
   def signup
     user = Player.create(player_params)
-    debugger
     if user.id
       session[:user_id] = user.id
       render json: user, status: :created
@@ -43,6 +42,12 @@ class PlayersController < ApplicationController
     end
   end
 
+  def delete_fav
+    debugger
+    favorite = Favorite.find(params[:favorite_id])
+    favorite.destroy
+    head :no_content
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.

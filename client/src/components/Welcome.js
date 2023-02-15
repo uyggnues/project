@@ -12,7 +12,7 @@ const Welcome = ({setWelcome, width}) => {
                     <div className='welcomePage'>
                         <h1 className='header'>
                             Welcome to City Patrol !
-                            <button className='X' onClick={() => setWelcome(navigate('/'))}>X</button>
+                            <button className='X' onClick={() => setWelcome(navigate('/cities'))}>X</button>
                         </h1>
                         <h2 className='rulesHeader'>
                             How to Play:
@@ -31,7 +31,7 @@ const Welcome = ({setWelcome, width}) => {
                         <div className='welcomePage2'>
                             <h1 className='header2'>
                                 Welcome to Cities Patrol !
-                                <button className='X2' onClick={() => setWelcome(navigate('/'))}>X</button>
+                                <button className='X2' onClick={() => setWelcome(navigate('/cities'))}>X</button>
                             </h1>
                             <h2 className='rulesHeader2'>
                                 How to Play:
@@ -50,7 +50,7 @@ const Welcome = ({setWelcome, width}) => {
                         <div className='welcomePage3'>
                             <h1 className='header3'>
                                 Welcome to Cities Patrol !
-                                <button className='X3' onClick={() => setWelcome(navigate('/'))}>X</button>
+                                <button className='X3' onClick={() => setWelcome(navigate('/cities'))}>X</button>
                             </h1>
                             <h2 className='rulesHeader3'>
                                 How to Play:

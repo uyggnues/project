@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   post '/signup', to:'players#signup'
   get '/me', to: 'sessions#me'
   get '/authorized_user', to: 'players#show'
-  
+  delete '/players/:player_id/favorites/:player_id', to: 'players#delete_fav'
+
   # namespace :api do
   #   namespace :v1 do
 

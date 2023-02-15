@@ -31,32 +31,36 @@ function App() {
   const [height, width] = useWindowSize();
   const [user, setUser] = useState(null)
   const [errors, setErrors] = useState(null)
-
-  useEffect(() => {
-    fetch("/authorized_user")
-    .then((res) => {
-      if (res.ok) {
-        res.json()
-        .then((user) => {
-          // debugger
-          setUser(user);
-        });
-      } else {
-        setUser(null)
-      }
-    })
-  },[])
   
   useEffect(() => {
-    fetch("http://localhost:4000/cities")
-    .then(resp => resp.json())
-    .then(data => setCities(data))//setPost(data))
-  }, []);
+    if (user) {
+      fetch("/authorized_user")
+      .then((res) => {
+        if (res.ok) {
+          res.json()
+          .then((user) => {
+            // debugger
+            setUser(user);
+          });
+        } else {
+          setUser(null)
+        }
+      })
+    }
+  },[user])
+    
+    useEffect(() => {
+      if (user){
+        fetch("http://localhost:4000/cities")
+        .then(resp => resp.json())
+        .then(data => setCities(data))//setPost(data))
+      }
+  }, [user]);
 
   const [seeLogin, setSeeLogin ] = useState()
   const updateUser = (user) => setUser(user)
 
-  if(errors) return <h1>{errors}</h1>
+  // if(errors) return <h1>{errors}</h1>
   if(!user) return (
     <>
     {seeLogin ?
@@ -73,11 +77,11 @@ function App() {
         <Routes>
           <Route path='/cities/:city_id/UpdateCriminal/:criminal_id' element={<UpdateCriminal cities={cities} setCities={setCities} />} />
           <Route path='/cities/:city_id/NewCriminal' element={<NewCriminal setCities={setCities}/>} />
-          <Route path='/cities/:city_id/criminals' element={<Criminals/>} />
+          <Route path='/cities/:city_id/criminals' element={<Criminals user={user}/>} />
           <Route path='/cities/:city_id/catch' element={<Game/>} />
           <Route path='/cities/:city_id/jail' element={<Jail />} />
           <Route path='/Welcome' element={<Welcome setWelcome={setWelcome} width={width}/>} />
-          <Route exact path='/' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome} setUser={setUser}/>} />
+          <Route exact path='/cities' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome} setUser={setUser}/>} />
           <Route path='*' element={<Welcome />} />
           {/* <Route path='/Signup' element={<Signup />} />
           <Route path='/Login' element={<Login setUser={setUser} updateUser={updateUser}/>} /> */}

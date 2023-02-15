@@ -43,8 +43,9 @@ const NewCriminal = ({setCities}) => {
                   navigate(`/cities/${cityId}/criminals`)
             } else {
               res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+            //   debugger
             }
-          })
+        })
     }
 
     const removeError = (event) => {
@@ -52,10 +53,9 @@ const NewCriminal = ({setCities}) => {
         const error = event.target.parentElement.textContent.slice(0,-1)
         setErrors(current => current.filter(eString => eString !== error))
     }
-
     return (
         <>
-            {errors? errors.map((er, index)=> <div key={index} className='errorNot' >{er}<button onClick={removeError}>X</button></div>):null}
+        {errors ? errors.map((er, index) => <div key={index} className='errorNot' >{er}<button onClick={removeError} className='errButton'>X</button></div>):null}
         <div className='formCard'>
             <button className='formX' onClick={() => navigate(`/cities/${cityId}/criminals`)}>X</button>
             <div className="newCriminalImage">

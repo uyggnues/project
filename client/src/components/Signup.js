@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Signup = ({setSeeLogin, setUser}) => {
+    const [errors, setErrors] = useState([])
     const navigate = useNavigate()
     const [user, setUserObj] = useState({
         first_name: '',
@@ -34,15 +35,20 @@ const Signup = ({setSeeLogin, setUser}) => {
                     navigate('/Welcome')
                 })
             } else {
-                resp.json().then(messageObj => alert(messageObj.message))
+                resp.json().then(data => setErrors(Object.entries(data.message).map(e => `${e[0]} ${e[1]}`)))
             }
         })
-        .catch(err => alert(err))
-    } else {
-        alert('Password does not match Password Confirmation')
     }
+    }
+
+    const removeError = (event) => {
+        // debugger
+        const error = event.target.parentElement.textContent.slice(0,-1)
+        setErrors(current => current.filter(eString => eString !== error))
     }
     return (
+        <>
+        {errors ? errors.map((er, index) => <div key={index} className='errorNot' >{er}<button onClick={removeError} className='errButton'>X</button></div>):null}
         <div className='badge'>
             <div className='formDiv'>
                 <form className='signup' onSubmit={handleSubmit}>
@@ -69,6 +75,7 @@ const Signup = ({setSeeLogin, setUser}) => {
             </div>
             <p className='link'>Already have an account? Login <button onClick={() => setSeeLogin(current => !current)} className='here'>Here</button></p>
         </div>
+        </>
     );
 }
 

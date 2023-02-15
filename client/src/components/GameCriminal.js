@@ -24,14 +24,14 @@ const GameCriminal = ({m, cityId, setCivilians}) => {
                 <img className="gameImage" src={m.image} alt="post"/>
             </div>
             <div className='right'>
-                <div className='text'>Name: {m.name}</div>
-                <div className='text'>Age: {m.age} years old</div>
-                <div className='text'>Address: {m.address}</div>
-                <div className='text'>Birthday: {m.birthday}</div>
-                <div className='text'>Height: {civilianHeight} ft</div>
-                <div className='text'>Weight: {m.weight} Ib</div>
-                <button className='gameCatch' onClick={() => handleClick()}>CATCH!</button>
-            </div>
+                <div className='barText'><strong>Name: </strong> {m.name}</div>
+                    <div className='Text'><strong>Age: </strong> {m.age} years old</div>
+                    <div className='Text'><strong>Address: </strong> {m.address}</div>
+                    <div className='Text'><strong>Birthday: </strong> {m.birthday}</div>
+                    <div className='Text'><strong>Height: </strong> {civilianHeight} ft</div>
+                    <div className='Text'><strong>Weight: </strong> {m.weight} Ib</div>
+                    <button className='gameCatch' onClick={() => handleClick()}>CATCH!</button>
+                </div>
         </div>
     );
 }

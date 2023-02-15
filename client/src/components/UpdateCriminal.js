@@ -9,6 +9,7 @@ const UpdateCriminal = ({cities, setCities}) => {
     const cityId = parseInt(params.city_id)
     const criminalId = parseInt(params.criminal_id)
     const criminal = location.state.criminal
+    const [errors, setErrors] = useState([])
     const [updateCriminal, setUpdateCriminal] = useState({
         name: criminal.name,
         age: criminal.age,
@@ -42,12 +43,20 @@ const UpdateCriminal = ({cities, setCities}) => {
             if (resp.ok) {
                 navigate(`/cities/${cityId}/criminals`)
             } else {
-                
+                resp.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
             }
         })
     }
 
+    const removeError = (event) => {
+        // debugger
+        const error = event.target.parentElement.textContent.slice(0,-1)
+        setErrors(current => current.filter(eString => eString !== error))
+    }
+
     return (
+        <>
+        {errors ? errors.map((er, index) => <div key={index} className='errorNot' >{er}<button onClick={removeError} className='errButton'>X</button></div>):null}
         <div className='formCard'>
             <button className='formX' onClick={() => navigate(`/cities/${cityId}/criminals`)}>X</button>
             <div className="newCriminalImage">
@@ -113,6 +122,7 @@ const UpdateCriminal = ({cities, setCities}) => {
                 <button className='submitButton'>UPDATE!</button>
             </form>
         </div>
+        </>
     );
 }
 
