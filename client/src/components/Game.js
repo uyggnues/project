@@ -8,6 +8,8 @@ const Game = () => {
     const navigate = useNavigate()
     const [civilians, setCivilians] = useState([])
     const [criminals, setCriminals] = useState([])
+    const [wrong, setWrong] = useState(false)
+    const [correct, setCorrect] = useState(false)
     const [index, setIndex] = useState(0)
     const [barIndex, setBarIndex] = useState(0)
     const params = useParams()
@@ -35,9 +37,9 @@ const Game = () => {
     }, [cityId]);
     
     const mappedMix = mix.map( m => (m.sentenced ? 
-        <GameCriminal key={`gameCriminal-${m.id}`} m={m} cityId={cityId} setCivilians={setCivilians}/>
+        <GameCriminal key={`gameCriminal-${m.id}`} m={m} cityId={cityId} setCivilians={setCivilians} setCorrect={setCorrect}/>
         :
-        <Civilian key={`civilian-${m.id}`} m={m}/>
+        <Civilian key={`civilian-${m.id}`} m={m} setWrong={setWrong}/>
     ))
     
     const displayOne = mappedMix[index]
@@ -61,6 +63,18 @@ const Game = () => {
 
     return (
         <div className='car'>
+            {correct ? <div className='correct' >
+                            <p className='corrText'>CORRECT!
+                            <br/>
+                            <button onClick={() => setCorrect(current => !current)} className='corrBut'>X</button>
+                            </p>
+                       </div> : null}
+            {wrong ? <div className='wrong' >
+                        <p className='wroText'>WRONG!
+                        <br/>
+                        <button onClick={() => setWrong(current => !current)} className='wroBut'>X</button>
+                        </p>
+                     </div> : null}
             <div className='infoBar'>
             <button className='barPrevious' onClick={() => barPrevious()} >{'<'}</button>
                 {displayUno}

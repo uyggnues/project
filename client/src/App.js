@@ -82,7 +82,7 @@ function App() {
           <Route path='/cities/:city_id/jail' element={<Jail />} />
           <Route path='/Welcome' element={<Welcome setWelcome={setWelcome} width={width}/>} />
           <Route exact path='/cities' element={<Cities cities={cities} width={width} welcome={welcome} setWelcome={setWelcome} setUser={setUser}/>} />
-          <Route path='*' element={<Welcome />} />
+          <Route path='*' element={<Welcome setWelcome={setWelcome} width={width}/>} />
           {/* <Route path='/Signup' element={<Signup />} />
           <Route path='/Login' element={<Login setUser={setUser} updateUser={updateUser}/>} /> */}
         </Routes>

@@ -1,13 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const Civilian = ({m}) => {
-
+const Civilian = ({m, setWrong}) => {
     const civilianHeight = Math.round(m.height * 10)/10
 
-    const handleClick = () => {
-        alert(<h5>WRONG</h5>)
-    }
+
     return (
+        <>
         <div className='comp'>
             <div className='left'>
                 <img className="gameImage" src={m.image} alt="post"/>
@@ -19,9 +17,10 @@ const Civilian = ({m}) => {
                 <div className='text'>Birthday: {m.birthday}</div>
                 <div className='text'>Height: {civilianHeight} ft</div>
                 <div className='text'>Weight: {m.weight} Ib</div>
-                <button className='gameCatch' onClick={() => handleClick()}>CATCH!</button>
+                <button className='gameCatch' onClick={() => setWrong(current => !current)}>CATCH!</button>
             </div>
         </div>
+        </>
     );
 }
 

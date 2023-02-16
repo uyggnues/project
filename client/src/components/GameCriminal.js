@@ -1,7 +1,7 @@
-import React from 'react';
+import React,{useState} from 'react';
 
-const GameCriminal = ({m, cityId, setCivilians}) => {
-
+const GameCriminal = ({m, cityId, setCivilians, setCorrect}) => {
+    
     const civilianHeight = Math.round(m.height * 10)/10
 
     const handleClick = () => {
@@ -11,10 +11,10 @@ const GameCriminal = ({m, cityId, setCivilians}) => {
         .then(res => res.json())
         .then(post =>             
             setCivilians(current => {
+                setCorrect(current => !current)
                 const civId = current.findIndex(ele => ele.id === post.id)
                 return [...current.slice(0, civId), ...current.slice(civId + 1)]
             },
-            alert(<h5>CORRECT</h5>)
         ))
     }
 
@@ -30,7 +30,7 @@ const GameCriminal = ({m, cityId, setCivilians}) => {
                     <div className='Text'><strong>Birthday: </strong> {m.birthday}</div>
                     <div className='Text'><strong>Height: </strong> {civilianHeight} ft</div>
                     <div className='Text'><strong>Weight: </strong> {m.weight} Ib</div>
-                    <button className='gameCatch' onClick={() => handleClick()}>CATCH!</button>
+                    <button className='gameCatch' onClick={() => setCorrect(current => !current)}>CATCH!</button>
                 </div>
         </div>
     );
