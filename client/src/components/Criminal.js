@@ -15,8 +15,9 @@ const Criminal = ({criminal, width, setCriminals, user}) => {
         player_id: user.id
     })
     // debugger
-    const [heart, setHeart] = useState('🖤')
-    // console.log(width)
+    const heartItem = user.fav_criminals.find(c => c.id === criminal.id) ? '💗' : '🖤'
+    const [heart, setHeart] = useState(heartItem)
+    // console.log(user)
 
     const deleteCriminal = () => {
         fetch(`http://localhost:4000/criminals/${criminal.id}`, {

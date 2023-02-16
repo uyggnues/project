@@ -13,7 +13,7 @@ puts 'seeding cities'
 end
 
 puts 'seeding civilians'
-1000.times do
+500.times do
     c = City.all.sample
     Civilian.create(name: Faker::Name.name, age: Faker::Number.between(from: 15, to: 65), address: Faker::Address.street_address, birthday: Faker::Date.birthday, height: Faker::Number.between(from: 5.0, to: 7.0), weight: Faker::Number.between(from: 100, to: 250), image: Faker::LoremFlickr.image, city: c )
 end

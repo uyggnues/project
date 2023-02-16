@@ -30,10 +30,10 @@ function App() {
   const [cities, setCities] = useState([])
   const [height, width] = useWindowSize();
   const [user, setUser] = useState(null)
-  const [errors, setErrors] = useState(null)
+  // const [errors, setErrors] = useState(null)
   
   useEffect(() => {
-    if (user) {
+    if (!user) {
       fetch("/authorized_user")
       .then((res) => {
         if (res.ok) {

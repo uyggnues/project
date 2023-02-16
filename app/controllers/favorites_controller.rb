@@ -26,12 +26,11 @@ class FavoritesController < ApplicationController
   end
 
   # DELETE /cities/1
-  # def delete_fav
-  #   debugger
-  #   favorite = Favorite.find(params[:favorite_id])
-  #   favorite.destroy
-  #   head :no_content
-  # end
+  def delete_fav
+    favorite = Favorite.where(player_id: params[:player_id], criminal_id: params[:id])
+    favorite.destroy_all
+    head :no_content
+  end
 
 
   private

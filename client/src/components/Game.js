@@ -47,7 +47,7 @@ const Game = () => {
     const displayUno = displayCriminals[barIndex]
     
     const displayNext = () => {
-            setIndex(current => current + 1)
+        setIndex(current => current + 1)
     }
     const displayPrevious = () => {
         setIndex(current => current - 1)
