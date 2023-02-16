@@ -43,7 +43,10 @@ const NewCriminal = ({setCities}) => {
                   navigate(`/cities/${cityId}/criminals`)
             } else {
               res.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
-            //   debugger
+            window.scrollTo({
+              top: 0,
+              behavior: 'smooth' // for smoothly scrolling
+            });
             }
         })
     }

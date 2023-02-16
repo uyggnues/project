@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useParams, useNavigate, useLocation} from 'react-router-dom'
 import validator from 'validator'
 
@@ -44,6 +44,10 @@ const UpdateCriminal = ({cities, setCities}) => {
                 navigate(`/cities/${cityId}/criminals`)
             } else {
                 resp.json().then(data => setErrors(Object.entries(data.errors).map(e => `${e[0]} ${e[1]}`)))
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth' // for smoothly scrolling
+                });
             }
         })
     }

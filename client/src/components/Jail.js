@@ -3,7 +3,7 @@ import { useLocation, useParams, useNavigate } from 'react-router-dom'
 import CaughtCriminals from './CaughtCriminals';
 import HorizontalScroll from 'react-scroll-horizontal';
 
-const Jail = (props) => {
+const Jail = () => {
     const navigate = useNavigate()
     const params = useParams()
     const location = useLocation()

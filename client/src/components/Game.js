@@ -8,6 +8,7 @@ const Game = () => {
     const navigate = useNavigate()
     const [civilians, setCivilians] = useState([])
     const [criminals, setCriminals] = useState([])
+    // const [mixed, setMixed] = useState([])
     const [wrong, setWrong] = useState(false)
     const [correct, setCorrect] = useState(false)
     const [index, setIndex] = useState(0)
@@ -16,14 +17,21 @@ const Game = () => {
     const cityId = parseInt(params.city_id)
 
     const mix = [...civilians, ...criminals]
-    // console.log(criminals)
+    // setMixed(mix)
+    // setMixed([...civilians, ...criminals])
+    // console.log(mixed)
     const shuffleArray = (array) => {
+        // console.log(mixed)
         for (let i = array.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
             [array[i], array[j]] = [array[j], array[i]];
         }
     }
+
     useEffect(() => {
+        // setMixed(mix)
+        // setMixed([...civilians, ...criminals])
+        // console.log(criminals)
         shuffleArray(mix)
     }, [])
 
@@ -36,6 +44,7 @@ const Game = () => {
             setCriminals(data.criminals)
         })
     }, [cityId]);
+
     
     const mappedMix = mix.map( m => (m.sentenced ? 
         <GameCriminal key={`gameCriminal-${m.id}`} m={m} cityId={cityId} setCivilians={setCivilians} setCorrect={setCorrect}/>

@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React from 'react';
 
 const GameCriminal = ({m, cityId, setCivilians, setCorrect}) => {
     
@@ -30,7 +30,7 @@ const GameCriminal = ({m, cityId, setCivilians, setCorrect}) => {
                     <div className='Text'><strong>Birthday: </strong> {m.birthday}</div>
                     <div className='Text'><strong>Height: </strong> {civilianHeight} ft</div>
                     <div className='Text'><strong>Weight: </strong> {m.weight} Ib</div>
-                    <button className='gameCatch' onClick={() => setCorrect(current => !current)}>CATCH!</button>
+                    <button className='gameCatch' onClick={() => handleClick()}>CATCH!</button>
                 </div>
         </div>
     );

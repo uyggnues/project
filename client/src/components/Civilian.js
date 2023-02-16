@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const Civilian = ({m, setWrong}) => {
     const civilianHeight = Math.round(m.height * 10)/10
