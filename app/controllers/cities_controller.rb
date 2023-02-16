@@ -9,6 +9,7 @@ class CitiesController < ApplicationController
   end
 
   def criminals
+    # debugger
     city = City.find(params[:city_id])
     render json: city.criminals, status: :ok
   end

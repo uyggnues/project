@@ -5,6 +5,7 @@ const CaughtCriminals = ({criminal, width}) => {
     const criminalHeight = Math.round(criminal.height * 10)/10
     return (
         <div>
+            {criminal.in_jail ?
             <div className='folder'>
                     <div className='leftFolder'>
                         <img className="jailImage" src={criminal.image} alt="post"/>
@@ -19,6 +20,9 @@ const CaughtCriminals = ({criminal, width}) => {
                     <div className='jailText'>sentenced: {criminal.sentenced}</div>
                 </div>
             </div>
+            :
+            null
+            }
         </div>
     );
 }

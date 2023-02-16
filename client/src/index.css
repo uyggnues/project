@@ -486,6 +486,7 @@ html{
   margin-left: 6rem;
   transform: rotate(-10deg);
   border: 5px solid;
+  height: 20rem;
 }
 
 .jailText{
