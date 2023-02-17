@@ -42,7 +42,7 @@ const Game = () => {
     
     
     const mappedMix = mixed.map( m => (m.sentenced ? 
-        <GameCriminal key={`gameCriminal-${m.id}`} m={m} cityId={cityId} setCivilians={setCivilians} setCorrect={setCorrect}/>
+        <GameCriminal key={`gameCriminal-${m.id}`} m={m} cityId={cityId} setCivilians={setCivilians} setCorrect={setCorrect} setMixed={setMixed} setCriminals={setCriminals}/>
         :
         <Civilian key={`civilian-${m.id}`} m={m} setWrong={setWrong}/>
     ))

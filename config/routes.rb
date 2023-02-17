@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :civilians
   
   get '/cities/:city_id/criminals', to:'cities#criminals'
+  delete '/cities/:city_id/criminals/:id', to:'cities#delete'
   get '/cities/:city_id/civilians', to:'cities#civilians'
   post '/cities/:city_id/criminals', to:'cities#new_criminals'
   post '/login', to:'sessions#login'

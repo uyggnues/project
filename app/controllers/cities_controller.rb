@@ -33,6 +33,13 @@ class CitiesController < ApplicationController
     render json: {civilians: city.civilians, criminals: criminals}, status: :ok
   end
 
+  def delete
+    city = City.find(params[:city_id])
+    criminal = city.criminals.find(params[:id])
+    criminal.delete
+    head :no_content
+  end
+
 
 private
     # Use callbacks to share common setup or constraints between actions.
