@@ -267,10 +267,12 @@ html{
   height: 10rem;
   width: 13rem;
   text-align: center;
+  margin-left: 20rem;
 }
 
 .addButton{
   margin-right: 0;
+  margin-right: 20rem;
 }
 .catchButton{
   background-image: url('http://www.clker.com/cliparts/Y/g/u/i/Z/o/red-arrow-md.png');
