@@ -15,8 +15,8 @@ const Cities = ({cities, width, welcome, setUser}) => {
         if (welcome) navigate('/Welcome')
     }, [welcome, navigate])
 
-    const logout = (e) => {
-        e.preventDefault()
+    const logout = () => {
+  
 
         fetch('http://localhost:4000/logout', {
             method: 'DELETE',
