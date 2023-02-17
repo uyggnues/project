@@ -22,6 +22,10 @@ const GameCriminal = ({m, cityId, setCivilians, setCorrect,setMixed, setCriminal
                             const updated_criminals = current.filter(ele => ele.id !== m.id)
                             return updated_criminals
                         })
+                        setCriminals(current => {
+                            const updated_criminals = current.filter(ele => ele.id !== m.id)
+                            return updated_criminals
+                        })
                     })
                 }
             })

@@ -161,7 +161,7 @@ html{
   height: 63rem;
   width: 110rem;
   display: flex;
-  margin-left: 4rem;
+  margin: auto
 }
 
 .criminalCard::-webkit-scrollbar{
@@ -174,6 +174,7 @@ html{
   width: 35rem;
   text-align: center;
   display: flex;
+  margin-left: 5rem;
   /* border: 2px solid; */
 }
 

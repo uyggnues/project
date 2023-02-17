@@ -57,7 +57,7 @@ const Criminal = ({criminal, width, setCriminals, user}) => {
     // console.log(favor)
     // debugger
     return (
-        <div className='padding'>
+        <div>
             <div>
                 {width > 1500 && !criminal.in_jail ?
                 <>
