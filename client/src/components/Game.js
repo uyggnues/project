@@ -54,16 +54,32 @@ const Game = () => {
     const displayUno = displayCriminals[barIndex]
     
     const displayNext = () => {
-        setIndex(current => current + 1)
+        if(index === mappedMix.length - 1) {
+            setIndex(0)
+        } else {
+            setIndex(current => current + 1)
+        }
     }
     const displayPrevious = () => {
-        setIndex(current => current - 1)
+        if(index <= 0) {
+            setIndex(mappedMix.length -1)
+        } else {
+            setIndex(current => current - 1)
+        }
     }
     const barNext = () => {
-        setBarIndex(current => current + 1)
+        if(barIndex === displayCriminals.length - 1) {
+            setBarIndex(0)
+        } else {
+            setBarIndex(current => current + 1)
+        }
     }
     const barPrevious = () => {
-        setBarIndex(current => current - 1)
+        if (barIndex <= 0){
+            setBarIndex(displayCriminals.length - 1)
+        } else {
+            setBarIndex(current => current - 1)
+        }
     }
 
     return (
