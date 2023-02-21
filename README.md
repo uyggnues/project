@@ -32,7 +32,7 @@ npm start --prefix client
 * then read the instruction written one the welcome page, and when you're ready press the 'X' button
 * Next pice a city of your choosing and click the arrow button that says "Go Here" 
 * then make sure to at least look through all the criminals because the more you remember the better for the game
-* And when you're ready click on the 'CATCH!' button to start playing!
+* And when you're ready click on the 'CATCH!' bu tton to start playing!
 * There is no time limit so you can take your time and figure out who the criminal is and who isn't
 * To figure out who is the criminal you have to look at the criminals displayed on the top and see if there are any of them are in the computer down below.
 * If your right it will tell your that you are right and if your wrong it will also tell your that you are wrong.
@@ -56,4 +56,4 @@ The program is available as open source under the terms of the [MIT License](htt
 
 
 ### Walkthrough
-<a href=https://youtu.be/8-kMNw-tcPk><img id="img-with-fallback" class="style-scope ytcp-img-with-fallback" src="https://i9.ytimg.com/vi_webp/8-kMNw-tcPk/mq2.webp?sqp=CJi14Z0G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CIAC0AWKAgwIABABGH8gHSgTMA8=&rs=AOn4CLAU0TLT8KAHRD9w2kpUmGUYm1wSUw"/></a>
+<a href=https://youtu.be/eM1fCkEsDrw><img id="img-with-fallback" class="style-scope ytcp-img-with-fallback" src="https://i9.ytimg.com/vi_webp/8-kMNw-tcPk/mq2.webp?sqp=CJi14Z0G-oaymwEmCMACELQB8quKqQMa8AEB-AH-CIAC0AWKAgwIABABGH8gHSgTMA8=&rs=AOn4CLAU0TLT8KAHRD9w2kpUmGUYm1wSUw"/></a>

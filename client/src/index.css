@@ -267,7 +267,7 @@ html{
   height: 10rem;
   width: 13rem;
   text-align: center;
-  margin-left: 20rem;
+  margin-left: 10rem;
 }
 
 .addButton{
@@ -551,7 +551,7 @@ html{
   position: relative;
 }
 
-.login, .signup{
+.login, .signup{ 
   display: grid;
   margin-left: 10rem;
   margin-right: 10rem;

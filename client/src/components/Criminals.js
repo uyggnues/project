@@ -13,14 +13,14 @@ function useWindowSize () {
     }, [])
     return size
 }
-
 const Criminals = ({user}) => {
     const [criminals, setCriminals] = useState([])
     const [height, width] = useWindowSize();
     const params = useParams()
     const navigate = useNavigate()
     const cityId = parseInt(params.city_id)
-
+    
+    console.log(width)
     // console.log(criminals)
     
     useEffect(() => {
